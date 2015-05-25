@@ -1,0 +1,86 @@
+.page        {
+    padding-top:5px;
+}
+
+header {
+    font-family:  'Lucida Sans Typewriter', 'Lucida Console', monaco, 'Bitstream Vera Sans Mono', monospace;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.page-home      { background: #0708ff; color: #09ffa7; }
+.page-about     { background:#E59400; color: #a5130e; }
+.page-contact   { background:#ffa6bb; color:#9e0000; }
+
+#grad {
+    background: -webkit-linear-gradient(left,rgba(255,0,0,0),rgba(255,0,0,1)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,rgba(255,22,22,.2),rgba(255,0,0,1)); /*Fx 3.6-15*/
+    background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /*Standard*/
+}
+
+.ng-enter           { animation: scaleUp 0.5s both ease-in; z-index: 8888; }
+.ng-leave           { animation: slideOutLeft 0.5s both ease-in; z-index: 9999; }
+
+/* style.css */
+
+
+/* ANIMATIONS
+============================================================================= */
+
+/* leaving animations ----------------------------------------- */
+/* rotate and fall */
+@keyframes rotateFall {
+    0%      { transform: rotateZ(0deg); }
+    20%     { transform: rotateZ(10deg); animation-timing-function: ease-out; }
+    40%     { transform: rotateZ(54deg); }
+    60%     { transform: rotateZ(16deg); }
+    80%     { transform: rotateZ(-75deg);}
+    100%    { transform: translateY(100%) rotateZ(17deg); }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+
+/* rotate out newspaper */
+@keyframes rotateOutNewspaper {
+    to      { transform: translateZ(-5000px) rotateZ(1440deg); opacity: .2;}
+}
+
+/* entering animations --------------------------------------- */
+/* scale up */
+@keyframes scaleUp {
+    from    { opacity: 0.3; -webkit-transform: scale(0.6); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* page specific animations ------------------------ */
+
+/* home -------------------------- */
+.page-home.ng-enter         { animation: scaleUp 0.5s both ease-in; }
+.page-home.ng-leave         { transform-origin: 0% 0%; animation: rotateFall 3s both ease-in; }
+
+/* about ------------------------ */
+.page-about.ng-enter        { animation:slideInRight 0.5s both ease-in; }
+.page-about.ng-leave        { animation:slideOutLeft 0.5s both ease-in; }
+
+/* contact ---------------------- */
+.page-contact.ng-leave      { transform-origin: 50% 50%; animation: rotateOutNewspaper 4s both ease-in; }
+.page-contact.ng-enter      { animation:slideInUp 0.5s both ease-in; }
