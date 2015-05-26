@@ -4,7 +4,11 @@
 
 //Connect to database. Database 'jobflex' is automatically created if it does not previously exist.
 
-var mongoose = require('mongoose');
+    var mongoose = require('mongoose');
+    var candidateData = require('./candidateData.json');
+    var companyData = require('./companyData.json');
+
+
 mongoose.connect('mongodb://localhost/jobflex')
 
 /*Test connection*/
@@ -66,20 +70,26 @@ var companySchema = mongoose.Schema(
 var candidate = mongoose.model('candidate', candidateSchema)
 var company = mongoose.model('company', companySchema)
 
-var example = new candidate({ username: 'exampleuser', password: 'abcdefg', firstName: 'John', lastName: 'Mueller',
-    birthdate: 'April 1, 1985',gender : 'M', address: '504 Chamberlain Lane', city: 'Naperville', state: 'IL'})
+//Populate candidate collection if there is data in companyData.json
 
-var example2 = new company({companyName: 'ACME', password: 'widgets2000', corporateId: '1234567890', firstName: 'Hayden',
-    lastName: 'Smith', address: '1000 Corporate Drive', city: 'Chicago', state: 'IL', email: 'ACME@email.com'})
+if (candidateData.length != undefined || null) {
+    for (var i = 0; i < candidate.length - 1; i++) {
+        var populateCandidate = new candidate(candidateData[i]);
+        populateCandidate.save(function (err, data) {
+            if (err) console.log(err);
+            else console.log('Saved : ', data);
+        });
+    };
+};
 
-//Save information to database. Data should be shown on console.
+//Populate company collection if there is data in companyData.json
 
-example.save(function (err, data) {
-    if (err) console.log(err);
-    else console.log('Saved : ', data );
-});
-
-example2.save(function (err, data) {
-    if (err) console.log(err);
-    else console.log('Saved : ', data );
-});
+if (companyData.length != undefined || null) {
+    for (var i = 0; i < company.length - 1; i++) {
+        var populateCompany = new company(companyData[i]);
+        populateCompany.save(function (err, data) {
+            if (err) console.log(err);
+            else console.log('Saved : ', data);
+        });
+    };
+};
