@@ -1,0 +1,25 @@
+[
+{
+  "username": "exampleuser",
+  "password": "abcdefg",
+  "firstName": "John",
+  "lastName": "Mueller",
+  "birthdate": "April 1, 1985",
+  "gender" : "M",
+  "address": "504 Chamberlain Lane",
+  "city": "Naperville",
+  "state": "IL"
+},
+
+{
+"username": "newuser",
+"password": "abcdefghijk",
+"firstName": "Penelope",
+"lastName": "Smith",
+"birthdate": "January 31, 1989",
+"gender" : "F",
+"address": "123 Fourth Street",
+"city": "Chicago",
+"state": "IL"
+}
+        ]
