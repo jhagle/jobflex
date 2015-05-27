@@ -2,12 +2,18 @@
  * Created by Stephan on 5/25/2015.
  */
 
-//Connect to database. Database 'jobflex' is automatically created if it does not previously exist.
+//Initialize variables.
 
     var mongoose = require('mongoose');
-    var candidateData = require('./candidateData.json');
-    var companyData = require('./companyData.json');
+    var fs = require('fs');
+    var candidateContent = String(fs.readFileSync('./candidateData.json','UTF-8'));
+    var companyContent = String(fs.readFileSync('./companyData.json','UTF-8'));
+    var candidateData = JSON.parse(candidateContent) ;
+    var companyData = JSON.parse(companyContent);
+    var candidateLength = candidateData.length;
+    var companyLength = companyData.length;
 
+//Connect to database. Database 'jobflex' is automatically created if it does not previously exist.
 
 mongoose.connect('mongodb://localhost/jobflex')
 
@@ -72,24 +78,24 @@ var company = mongoose.model('company', companySchema)
 
 //Populate candidate collection if there is data in companyData.json
 
-if (candidateData.length != undefined || null) {
-    for (var i = 0; i < candidate.length - 1; i++) {
+
+    for (var i = 0; i < candidateLength; i++) {
         var populateCandidate = new candidate(candidateData[i]);
         populateCandidate.save(function (err, data) {
             if (err) console.log(err);
             else console.log('Saved : ', data);
         });
     };
-};
+
 
 //Populate company collection if there is data in companyData.json
 
-if (companyData.length != undefined || null) {
-    for (var i = 0; i < company.length - 1; i++) {
+
+    for (var i = 0; i < companyLength; i++) {
         var populateCompany = new company(companyData[i]);
         populateCompany.save(function (err, data) {
             if (err) console.log(err);
             else console.log('Saved : ', data);
         });
     };
-};
+

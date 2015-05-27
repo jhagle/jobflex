@@ -83,6 +83,7 @@
     "state": "IL"
   },
 
+
   {
     "username": "testpilot",
     "password": "123",
@@ -105,5 +106,5 @@
     "address": "123 Fake Street",
     "city": "Chicago",
     "state": "IL"
-  },
+  }
 ]

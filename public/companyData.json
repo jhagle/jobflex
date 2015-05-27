@@ -8,9 +8,8 @@
     "city": "Chicago",
     "state": "IL",
     "email": "email@gmail.com",
-    "created": "",
     "webpage": "www.oracle.com",
-    "description": "Leading technology consultants",
+    "description": "Leading technology consultants"
   },
 
   {
@@ -22,9 +21,8 @@
     "city": "Chicago",
     "state": "IL",
     "email": "email@gmail.com",
-    "created": "",
     "webpage": "www.groupon.com",
-    "description": "The best deals",
+    "description": "The best deals"
   },
 
   {
@@ -36,9 +34,8 @@
     "city": "Chicago",
     "state": "IL",
     "email": "email@gmail.com",
-    "created": "",
     "webpage": "www.spartzinc.com",
-    "description": "Apps",
+    "description": "Apps"
   },
 
   {
@@ -50,9 +47,8 @@
     "city": "Mountain View",
     "state": "CA",
     "email": "email@gmail.com",
-    "created": "",
     "webpage": "www.google.com",
-    "description": "Google",
+    "description": "Google"
   },
 
   {
@@ -64,9 +60,8 @@
     "city": "Mountain View",
     "state": "CA",
     "email": "email@gmail.com",
-    "created": "",
     "webpage": "www.yahoo.com",
-    "description": "Yahoo!",
+    "description": "Yahoo!"
   },
 
   {
@@ -78,9 +73,8 @@
     "city": "New York",
     "state": "NY",
     "email": "email@gmail.com",
-    "created": "",
     "webpage": "www.davismeansbusiness.com",
-    "description": "Avocados at Law",
+    "description": "Avocados at Law"
   },
 
   {
@@ -92,9 +86,8 @@
     "city": "Chicago",
     "state": "IL",
     "email": "email@gmail.com",
-    "created": "",
     "webpage": "www.google.com",
-    "description": "Scientific and Technological Advanced Research Labs",
+    "description": "Scientific and Technological Advanced Research Labs"
   },
 
   {
@@ -106,9 +99,8 @@
     "city": "Seattle",
     "state": "WA",
     "email": "email@gmail.com",
-    "created": "",
     "webpage": "www.dccomics.com",
-    "description": "We never fail the city",
+    "description": "We never fail the city"
   },
 
   {
@@ -120,8 +112,7 @@
     "city": "Chicago",
     "state": "IL",
     "email": "email@gmail.com",
-    "created": "",
     "webpage": "www.dccomics.com",
-    "description": "Protect the city",
-  },
+    "description": "Protect the city"
+  }
 ]
