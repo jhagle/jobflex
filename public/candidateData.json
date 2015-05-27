@@ -21,5 +21,89 @@
 "address": "123 Fourth Street",
 "city": "Chicago",
 "state": "IL"
-}
-        ]
+},
+
+  {
+    "username": "janedoe",
+    "password": "123",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "birthdate": "January 31, 1989",
+    "gender" : "F",
+    "address": "123 Fake Street",
+    "city": "Chicago",
+    "state": "IL"
+  },
+
+  {
+    "username": "johndoe",
+    "password": "123",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "birthdate": "January 31, 1989",
+    "gender" : "M",
+    "address": "123 Fake Street",
+    "city": "Chicago",
+    "state": "IL"
+  },
+
+  {
+    "username": "imBatman",
+    "password": "123",
+    "firstName": "Bruce",
+    "lastName": "Wayne",
+    "birthdate": "January 31, 1989",
+    "gender" : "M",
+    "address": "123 Fake Street",
+    "city": "Chicago",
+    "state": "IL"
+  },
+
+  {
+    "username": "ironMan",
+    "password": "123",
+    "firstName": "Tony",
+    "lastName": "Stark",
+    "birthdate": "January 31, 1989",
+    "gender" : "M",
+    "address": "123 Fake Street",
+    "city": "Chicago",
+    "state": "IL"
+  },
+
+  {
+    "username": "hulk",
+    "password": "123",
+    "firstName": "Bruce",
+    "lastName": "Banner",
+    "birthdate": "January 31, 1989",
+    "gender" : "M",
+    "address": "123 Fake Street",
+    "city": "Chicago",
+    "state": "IL"
+  },
+
+  {
+    "username": "testpilot",
+    "password": "123",
+    "firstName": "Hal",
+    "lastName": "Jordan",
+    "birthdate": "January 31, 1989",
+    "gender" : "M",
+    "address": "123 Fake Street",
+    "city": "Chicago",
+    "state": "IL"
+  },
+
+  {
+    "username": "scarletspeedster",
+    "password": "123",
+    "firstName": "Barry",
+    "lastName": "Allen",
+    "birthdate": "January 31, 1989",
+    "gender" : "M",
+    "address": "123 Fake Street",
+    "city": "Chicago",
+    "state": "IL"
+  },
+]
