@@ -11,6 +11,8 @@ var userSchema = mongoose.Schema({
         password     : String,
         firstname    : String,
         lastname     : String,
+        school       : String,
+        major        : String,
         culture : { type : Array , "default" : [] },
         skills : { type : Array , "default" : [] }
     },

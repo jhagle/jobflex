@@ -19,24 +19,6 @@
 
     <div class="row">
 
-        <!-- LOCAL INFORMATION -->
-        <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
-
-                <p>
-                    <strong>id</strong>: <%= user._id %><br>
-                    <strong>email</strong>: <%= user.local.email %><br>
-                    <strong>First Name</strong>: <%= user.local.firstname %><br>
-                    <strong>Last Name</strong>: <%= user.local.lastname %><br>
-                    <strong>password</strong>: <%= user.local.password %>
-                </p>
-
-            </div>
-        </div>
-
-    </div>
-
     <div class="container pull-left">
         <h3>Your Profile</h3>
         <div class="row pull-left">
@@ -44,8 +26,8 @@
                 <div class="well profile">
                     <div class="col-sm-12">
                         <div class="col-xs-12 col-sm-8">
-                            <h2><%=user.local.firstname%></h2>
-                            <p><strong>About: </strong> Web Designer / UI. </p>
+                            <h2><%=user.local.firstname%> <%=user.local.lastname%></h2>
+                            <p><strong>School: </strong> <%=user.local.school%> </p>
                             <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
                             <p><strong>Top Skills: </strong>
                                 <span class="tags">Web Dev</span>
@@ -69,8 +51,8 @@
                     </div>
                     <div class="col-xs-12 divider text-center">
                         <div class="col-xs-12 col-sm-4 col-md-6 col-lg-offset-0 col-lg-6">
-                            <button class="btn btn-success btn-block" onClick="location.href='EditProfile.html'"> Edit Profile, Skills or Culture </button>
-                            <button class="btn btn-success btn-block" onClick=""> Upload A Resume</button>
+                            <a href="/editprofile" class="btn btn-default"><span class="fa fa-user"></span> Edit Profile</a>
+                            <a href="/uploadres" class="btn btn-default"><span class="fa fa-user"></span> Upload Resume</a>
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-6 col-lg-offset-0 col-lg-6">
                             <div class="btn-group dropup btn-block">
@@ -87,8 +69,8 @@
                     <div>
                         <h3><br><br><br>Your References</h3>
 
-                        <b>Proffesor Xavier: </b> "Jane is a very good student"<br>
-                        <b>Bob Loblaw: </b> "Jane is a very good at coding <br>
+                        <b>Proffesor Xavier: </b> "<%=user.local.firstname%> is a very good student"<br>
+                        <b>Bob Loblaw: </b> "<%=user.local.firstname%> is a very good at coding <br>
                         <div class="form-group">
                             <label for="email">Email:</label>
                             <input type="email" class="form-control" id="email" placeholder="Enter email">
@@ -102,6 +84,24 @@
             </div>
         </div>
     </div>
+</div>
+
+    <!-- LOCAL INFORMATION -->
+    <div class="col-sm-6">
+        <div class="well">
+            <h3><span class="fa fa-user"></span> Local</h3>
+
+            <p>
+                <strong>id</strong>: <%= user._id %><br>
+                <strong>email</strong>: <%= user.local.email %><br>
+                <strong>First Name</strong>: <%= user.local.firstname %><br>
+                <strong>Last Name</strong>: <%= user.local.lastname %><br>
+                <strong>password</strong>: <%= user.local.password %>
+            </p>
+
+        </div>
+    </div>
+
 </div>
 
 </body>

@@ -52,7 +52,17 @@ module.exports = function(app, passport) {
             user : req.user // get the user out of session and pass to template
         });
     });
+    //Go to edit Profile
+    app.get('/editprofile', function(req, res) {
 
+        // render the page and pass in any flash data if it exists
+        res.render('editprofile.ejs', { user : req.user });
+    });
+    // process the signup form
+    app.post('/editprofile', passport.authenticate('local-signup', {
+        successRedirect : '/profile' // redirect to the secure profile section
+
+    }));
     // =====================================
     // LOGOUT ==============================
     // =====================================
