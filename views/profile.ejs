@@ -37,6 +37,72 @@
 
     </div>
 
+    <div class="container pull-left">
+        <h3>Your Profile</h3>
+        <div class="row pull-left">
+            <div class="col-md-offset-0 col-md-12 col-lg-offset-0 col-lg-12">
+                <div class="well profile">
+                    <div class="col-sm-12">
+                        <div class="col-xs-12 col-sm-8">
+                            <h2><%=user.local.firstname%></h2>
+                            <p><strong>About: </strong> Web Designer / UI. </p>
+                            <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+                            <p><strong>Top Skills: </strong>
+                                <span class="tags">Web Dev</span>
+                                <span class="tags">UI/UX</span>
+                                <span class="tags">Debugging</span>
+
+                            </p>
+                            <p><strong>Top Cultures: </strong>
+                                <span class="tags2">Team Leader</span>
+                                <span class="tags2">Creative</span>
+                                <span class="tags2">People Skills</span>
+
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 text-center">
+                            <figure>
+                                <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
+
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 divider text-center">
+                        <div class="col-xs-12 col-sm-4 col-md-6 col-lg-offset-0 col-lg-6">
+                            <button class="btn btn-success btn-block" onClick="location.href='EditProfile.html'"> Edit Profile, Skills or Culture </button>
+                            <button class="btn btn-success btn-block" onClick=""> Upload A Resume</button>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-6 col-lg-offset-0 col-lg-6">
+                            <div class="btn-group dropup btn-block">
+                                <ul class="dropdown-menu text-left" role="menu">
+                                    <li><a href="#"><span class="fa fa-envelope pull-right"></span> Send an email </a></li>
+                                    <li><a href="#"><span class="fa fa-list pull-right"></span> Edit User Profile </a></li>
+                                    <li><a href="#"><span class="fa fa-book pull-right"></span> Upload Resume </a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div>
+                        <h3><br><br><br>Your References</h3>
+
+                        <b>Proffesor Xavier: </b> "Jane is a very good student"<br>
+                        <b>Bob Loblaw: </b> "Jane is a very good at coding <br>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                            <label for="email">Introduction:</label>
+                            <input type="email" class="form-control" id="ref" placeholder="Can you provide me a reference?">
+                        </div>
+                        <button type="button" class="btn btn-block">Ask for more references!</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 </body>
 </html>
