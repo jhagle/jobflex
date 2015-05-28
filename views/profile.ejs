@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Node Authentication</title>
+    <title>Your Profile</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <style>
@@ -41,6 +41,9 @@
                                 <span class="tags2">People Skills</span>
 
                             </p>
+                            References:<br>
+                            <b>Proffesor Xavier: </b> "<%=user.local.firstname%> is a very good student"<br>
+                            <b>Bob Loblaw: </b> "<%=user.local.firstname%> is a very good at coding <br>
                         </div>
                         <div class="col-xs-12 col-sm-4 text-center">
                             <figure>
@@ -61,18 +64,17 @@
                                     <li><a href="#"><span class="fa fa-list pull-right"></span> Edit User Profile </a></li>
                                     <li><a href="#"><span class="fa fa-book pull-right"></span> Upload Resume </a></li>
                                 </ul>
+
                             </div>
 
                         </div>
 
                     </div>
                     <div>
-                        <h3><br><br><br>Your References</h3>
+                        <br><br>
 
-                        <b>Proffesor Xavier: </b> "<%=user.local.firstname%> is a very good student"<br>
-                        <b>Bob Loblaw: </b> "<%=user.local.firstname%> is a very good at coding <br>
                         <div class="form-group">
-                            <label for="email">Email:</label>
+
                             <input type="email" class="form-control" id="email" placeholder="Enter email">
                             <label for="email">Introduction:</label>
                             <input type="email" class="form-control" id="ref" placeholder="Can you provide me a reference?">
@@ -86,20 +88,46 @@
     </div>
 </div>
 
-    <!-- LOCAL INFORMATION -->
-    <div class="col-sm-6">
-        <div class="well">
-            <h3><span class="fa fa-user"></span> Local</h3>
+    <div class="col-sm-2 "  >
 
-            <p>
-                <strong>id</strong>: <%= user._id %><br>
-                <strong>email</strong>: <%= user.local.email %><br>
-                <strong>First Name</strong>: <%= user.local.firstname %><br>
-                <strong>Last Name</strong>: <%= user.local.lastname %><br>
-                <strong>password</strong>: <%= user.local.password %>
-            </p>
+        <td class="col-sm-2">
+            <h1 style="text-align: left">Job Matches</h1>
+            <h5>Earn Points by Applying!</h5>
+            <hr style="border-width: 3px">
+        </td>
 
-        </div>
+        <td style="text-align: center;">
+            <a class="thumbnail" id="carousel-selector-0">
+                <img src="https://assets.dice.com/external/images/empLogos/66e8480fd50d60298e40d4695d74e937.jpg">
+
+            </a>
+        </td>
+
+        <td>
+            <a class="thumbnail" id="carousel-selector-1">
+                <img src="https://assets.dice.com/external/images/empLogos/b8e580d631966d9b28d518a37da2582d.gif"></a>
+        </td>
+
+        <td class="col-sm-12">
+            <a class="thumbnail" id="carousel-selector-2"><img src="http://assets.dice.com/external/images/grpLogos/1434744ejvImage.gif"></a>
+        </td>
+
+        <td class="col-sm-12">
+            <a class="thumbnail" id="carousel-selector-3"><img src="https://assets.dice.com/external/images/empLogos/32652largeLogo.gif"></a>
+        </td>
+
+        <td class="col-sm-12">
+            <a class="thumbnail" id="carousel-selector-4"><img src="http://assets.dice.com/external/images/grpLogos/287569ejvImage.gif"></a>
+        </td>
+
+        <td class="col-sm-12">
+            <a class="thumbnail" id="carousel-selector-5"><img src="https://assets.dice.com/external/images/empLogos/53f972166af28ff30a3c45a53d701ff8.gif"></a>
+        </td>
+        <td class="col-sm-12">
+            <a class="thumbnail" id="carousel-selector-6"><img src="http://assets.dice.com/external/images/grpLogos/933829ejvImage.gif"></a>
+        </td>
+
+
     </div>
 
 </div>
