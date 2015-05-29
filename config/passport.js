@@ -6,8 +6,6 @@ var LocalStrategy   = require('passport-local').Strategy;
 // load up the user model
 var User       		= require('../app/models/user');
 
-// load up the company model
-var Company       		= require('../app/models/company');
 
 // expose this function to our app using module.exports
 module.exports = function(passport) {
@@ -28,9 +26,7 @@ module.exports = function(passport) {
         User.findById(id, function (err, user) {
             done(err, user);
         });
-        Company.findById(id, function (err, user) {
-            done(err, user);
-        });
+
     });
 
     // =========================================================================
@@ -71,6 +67,7 @@ module.exports = function(passport) {
                     newUser.local.culture = req.param('culture');
                     newUser.local.school = req.param('school');
                     newUser.local.major = req.param('major');
+                    newUser.local.companyname = req.param('companyname');
                     // save the user
                     newUser.save(function (err) {
                         if (err)
@@ -84,52 +81,7 @@ module.exports = function(passport) {
 
         }));
 
-    // =========================================================================
-    // Company SIGNUP ============================================================
-    // =========================================================================
-    // we are using named strategies since we have one for login and one for signup
-    // by default, if there was no name, it would just be called 'local'
 
-    passport.use('company-signup', new LocalStrategy({
-            // by default, local strategy uses username and password, we will override with email
-            usernameField: 'companyemail',
-            passwordField: 'password',
-            passReqToCallback: true // allows us to pass back the entire request to the callback
-        },
-        function (req, companyemail, password, done) {
-
-            // find a user whose email is the same as the forms email
-            // we are checking to see if the user trying to login already exists
-            Company.findOne({ 'local.companyemail': companyemail }, function (err, company) {
-                // if there are any errors, return the error
-                if (err)
-                    return done(err);
-
-                // check to see if theres already a company with that email
-                if (company) {
-                    return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
-                } else {
-
-                    // if there is no company with that email
-                    // create the company
-                    var newCompany = new Company();
-
-                    // set the user's local credentials
-                    newCompany.local.companyemail = companyemail;
-                    newCompany.local.password = newUser.generateHash(password); // use the generateHash function in our user model
-                    newCompany.local.companyname = req.param('companyname');
-                    // save the company
-                    newCompany.save(function (err) {
-                        if (err)
-                            throw err;
-                        return done(null, newCompany);
-                    });
-                }
-
-            });
-
-
-        }));
 
 
     // =========================================================================
@@ -163,42 +115,6 @@ module.exports = function(passport) {
 
                 // all is well, return successful user
                 return done(null, user);
-            });
-
-
-        }));
-
-    // =========================================================================
-    // COMAPNY LOGIN ===========================================================
-    // =========================================================================
-    // we are using named strategies since we have one for login and one for signup
-    // by default, if there was no name, it would just be called 'local'
-
-    passport.use('company-login', new LocalStrategy({
-            // by default, local strategy uses username and password, we will override with email
-            usernameField: 'companyemail',
-            passwordField: 'password',
-            passReqToCallback: true // allows us to pass back the entire request to the callback
-        },
-        function (req, companyemail, password, done) { // callback with email and password from our form
-
-            // find a user whose email is the same as the forms email
-            // we are checking to see if the user trying to login already exists
-            Company.findOne({ 'local.companyemail': companyemail }, function (err, company) {
-                // if there are any errors, return the error before anything else
-                if (err)
-                    return done(err);
-
-                // if no company is found, return the message
-                if (!company)
-                    return done(null, false, req.flash('loginMessage', 'No company found.')); // req.flash is the way to set flashdata using connect-flash
-
-                // if the user is found but the password is wrong
-                if (!company.validPassword(password))
-                    return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
-
-                // all is well, return successful company
-                return done(null, company);
             });
 
 

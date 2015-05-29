@@ -15,6 +15,7 @@ var userSchema = mongoose.Schema({
         major        : String,
         culture : { type : Array , "default" : [] },
         skills : { type : Array , "default" : [] }
+
     },
     facebook         : {
         id           : String,
@@ -33,6 +34,12 @@ var userSchema = mongoose.Schema({
         token        : String,
         email        : String,
         name         : String
+    },
+    company            : {
+        password     : String,
+        companyname  : String,
+        culture : { type : Array , "default" : [] },
+        skills : { type : Array , "default" : [] }
     }
 
 });
