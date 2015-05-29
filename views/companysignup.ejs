@@ -21,6 +21,9 @@
 
     <style>
         body        { padding-top:80px; }
+        #usertype {
+            visibility: hidden;
+        }
     </style>
 </head>
 <body>
@@ -144,7 +147,7 @@
                             </form>
                             <form id="company-register-form" action="" method="post" role="form" style="display: none;">
                                 <div class="form-group">
-                                    <input type="text" name="firstname" id="firstname" tabindex="1" class="form-control" placeholder="Company Name" value="">
+                                    <input type="text" name="companyname" id="companyname" tabindex="1" class="form-control" placeholder="Company Name" value="">
                                 </div>
                                 <div class="form-group">
                                     <input type="email" name="email" id="email" tabindex="3" class="form-control" placeholder="Email Address" value="">
@@ -161,6 +164,9 @@
                                             <input type="submit" name="register-company-submit" id="register-company-submit" tabindex="6" class="form-control btn btn-register" value="Register Now">
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="usertype" id="usertype" class="form-control" placeholder="Company Name"  value="company">
                                 </div>
                             </form>
                         </div>
