@@ -1,0 +1,51 @@
+
+.thumbnail  {
+    height: 50px;
+    width: 130px;
+    border: 2px solid #081a33;
+}
+
+.thumbnail>img {
+    height: 40px;
+    width: 120px;
+}
+
+#border-right {
+    border-right-style: solid;
+    border-color: black;
+}
+
+#border-top-bottom {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: black;
+}
+
+h1 {
+    color: darkslategrey;
+    text-align: center;
+    text-transform: lowercase;
+    text-transform: capitalize;
+    font-family:  "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+    font-style: italic;
+    letter-spacing: 1px
+}
+
+p, ul {
+    padding-left: 100px;
+    padding-right: 50px;
+    color: black;
+    text-align: left;
+    line-height: 24px;
+    font-family:  'Lucida Sans Typewriter', 'Lucida Console', monaco, 'Bitstream Vera Sans Mono', monospace;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    list-style-type: circle;
+}
+
+i {
+    color: gold;
+    text-align: center;
+}
+

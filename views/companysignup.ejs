@@ -1,0 +1,200 @@
+<!-- views/signup.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>Signup for JobFlex</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <script src="sortable-master/Sortable.js"></script>
+    <script src="http://rubaxa.github.io/Ply/Ply.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+
+    <script src="sortable-master/ng-sortable.js"></script>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="public/registrationStyle.css" type="text/css"/>
+    <link rel="stylesheet" href="public/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="public/registrationJS.js"></script>
+
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body>
+<!--<div class="container">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <h1><span class="fa fa-sign-in"></span> Signup</h1>
+
+        &lt;!&ndash; show any messages that come back with authentication &ndash;&gt;
+<% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+
+
+&lt;!&ndash; LOGIN FORM &ndash;&gt;
+        <form action="/signup" method="post">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" name="firstname">
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" name="lastname">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+
+
+            &lt;!&ndash;-&#45;&#45; SORTS JS &#45;&#45;&#45;&#45;&ndash;&gt;
+
+
+            <hr>
+
+
+            <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+        </form>
+
+        <hr>
+
+        <p>Already have an account? <a href="/login">Login</a></p>
+        <p>Or go <a href="/">home</a>.</p>
+
+    </div>
+
+</div>-->
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a href="#" id="candidate-register-form-link">Register as Candidate</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="#" id="company-register-form-link">Register as Company</a>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form id="login-form" action="" method="post" role="form" style="display: block;">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <p class="lead">Register with your LinkedIn or Facebook account for quicker access!</p>
+                                            <div class="col-sm-4 social-buttons">
+                                                <a class="btn btn-block btn-social btn-linkedin" onclick="">
+                                                    <i class="fa fa-linkedin"></i> Register with LinkedIn
+                                                </a>
+                                                <a class="btn btn-block btn-social btn-facebook" onclick="">
+                                                    <i class="fa fa-facebook"></i> Register with Facebook
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div>
+                            </div>
+                            <form id="candidate-register-form" action="" method="post" role="form" style="display: none;">
+                                <div class="form-group">
+                                    <input type="text" name="firstname" id="firstname" tabindex="1" class="form-control" placeholder="First Name" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="lastname" id="lasttname" tabindex="2" class="form-control" placeholder="Last Name" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="school" id="school" tabindex="3" class="form-control" placeholder="School" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="major" id="major" tabindex="4" class="form-control" placeholder="Major" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" tabindex="5" class="form-control" placeholder="Email Address" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" tabindex="6" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="confirm-password" id="confirm-password" tabindex="7" class="form-control" placeholder="Confirm Password">
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" name="register-submit" id="register-submit" tabindex="8" class="form-control btn btn-register" value="Register Now">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <form id="company-register-form" action="" method="post" role="form" style="display: none;">
+                                <div class="form-group">
+                                    <input type="text" name="companyname" id="companyname" tabindex="1" class="form-control" placeholder="Company Name" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" id="companyemail" tabindex="3" class="form-control" placeholder="Email Address" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="companypassword" tabindex="4" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="confirm-password" id="company-confirm-password" tabindex="5" class="form-control" placeholder="Confirm Password">
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //Test for registion tabs
+    $(function() {
+
+        $('#candidate-register-form-link').click(function(e) {
+            $("#candidate-register-form").delay(100).fadeIn(100);
+            $("#login-form").fadeOut(100);
+            $("#company-register-form").fadeOut(100);
+            $('#login-form-link').removeClass('active');
+            $('#company-register-form-link').removeClass('active');
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+        $('#company-register-form-link').click(function(e) {
+            $("#company-register-form").delay(100).fadeIn(100);
+            $("#login-form").fadeOut(100);
+            $("#candidate-register-form").fadeOut(100);
+            $('#login-form-link').removeClass('active');
+            $('#candidate-register-form-link').removeClass('active');
+
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+
+    });
+</script>
+</body>
+</html>

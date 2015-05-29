@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>TESTREGISTER</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="registrationStyle.css" type="text/css"/>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <script type="text/javascript" src="jQuery/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script language="JavaScript" type="text/javascript" src="registrationJS.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <a href="#" class="active" id="login-form-link">Login</a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#" id="candidate-register-form-link">Candidate</a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#" id="company-register-form-link">Company</a>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form id="login-form" action="" method="post" role="form" style="display: block;">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="well">
+                                                <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                                                    <div class="form-group">
+                                                        <label for="username" class="control-label">Username</label>
+                                                        <input type="text" class="form-control" id="loginusername" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                                                        <span class="help-block"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="password" class="control-label">Password</label>
+                                                        <input type="password" class="form-control" id="loginpassword" name="password" value="" required="" title="Please enter your password">
+                                                        <span class="help-block"></span>
+                                                    </div>
+                                                    <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="remember" id="remember"> Remember login
+                                                        </label>
+                                                        <p class="help-block">(if this is a private computer)</p>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-success btn-block">Login</button>
+                                                    <div class="text-center">
+                                                        <a href="https://www.youtube.com/watch?v=0xojO-4VFPw" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p class="lead">Sign in with your LinkedIn or Facebook account for quicker access!</p>
+                                            <div class="col-sm-4 social-buttons">
+                                                <a class="btn btn-block btn-social btn-linkedin" onclick="">
+                                                    <i class="fa fa-linkedin"></i> Sign in with LinkedIn
+                                                </a>
+                                                <a class="btn btn-block btn-social btn-facebook" onclick="">
+                                                    <i class="fa fa-facebook"></i> Sign in with Facebook
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </form>
+                            <div>
+                        </div>
+                            <form id="candidate-register-form" action="" method="post" role="form" style="display: none;">
+                                <div class="form-group">
+                                    <input type="text" name="firstname" id="firstname" tabindex="1" class="form-control" placeholder="First Name" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="lastname" id="lasttname" tabindex="2" class="form-control" placeholder="Last Name" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="username" id="username" tabindex="3" class="form-control" placeholder="Username" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" tabindex="4" class="form-control" placeholder="Email Address" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" tabindex="5" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="confirm-password" id="confirm-password" tabindex="6" class="form-control" placeholder="Confirm Password">
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <form id="company-register-form" action="" method="post" role="form" style="display: none;">
+                                <div class="form-group">
+                                    <input type="text" name="companyname" id="companyname" tabindex="1" class="form-control" placeholder="Company Name" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="username" id="companyusername" tabindex="2" class="form-control" placeholder="Username" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="username" id="companyid" tabindex="2" class="form-control" placeholder="Employer ID" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" id="companyemail" tabindex="3" class="form-control" placeholder="Email Address" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="companypassword" tabindex="4" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="confirm-password" id="company-confirm-password" tabindex="5" class="form-control" placeholder="Confirm Password">
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" name="register-submit" id="company-register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

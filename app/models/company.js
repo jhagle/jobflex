@@ -3,15 +3,13 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
-// define the schema for our user model
+// define the schema for our company model
 var companySchema = mongoose.Schema({
 
     local            : {
-        email        : String,
+        companyemail : String,
         password     : String,
-        firstname    : String,
-        lastname     : String,
-        location     : String,
+        companyname  : String,
         culture : { type : Array , "default" : [] },
         skills : { type : Array , "default" : [] }
     }
