@@ -6,10 +6,13 @@
       <excludeFolder url="file://$MODULE_DIR$/public/newJobFlex/sortable-master/sortable-master/meteor/example/.meteor/local" />
       <excludeFolder url="file://$MODULE_DIR$/public/sortable-master/meteor/example/.meteor/local" />
       <excludeFolder url="file://$MODULE_DIR$/public/sortable-master/sortable-master/meteor/example/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/views/newJobFlex/sortable-master/meteor/example/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/views/newJobFlex/sortable-master/sortable-master/meteor/example/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/views/sortable-master/meteor/example/.meteor/local" />
+      <excludeFolder url="file://$MODULE_DIR$/views/sortable-master/sortable-master/meteor/example/.meteor/local" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jobflex-master node_modules" level="project" />
   </component>
 </module>
-
