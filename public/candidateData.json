@@ -1,6 +1,6 @@
 [
 {
-  "username": "exampleuser",
+  "email": "exampleuser@email.com",
   "password": "abcdefg",
   "firstName": "John",
   "lastName": "Mueller",
@@ -8,11 +8,12 @@
   "gender" : "M",
   "address": "504 Chamberlain Lane",
   "city": "Naperville",
-  "state": "IL"
+  "state": "IL",
+  "major": "Database Management"
 },
 
 {
-"username": "newuser",
+"email": "newuser@email.com",
 "password": "abcdefghijk",
 "firstName": "Penelope",
 "lastName": "Smith",
@@ -20,11 +21,12 @@
 "gender" : "F",
 "address": "123 Fourth Street",
 "city": "Chicago",
-"state": "IL"
+"state": "IL",
+  "major": "Computer Science"
 },
 
   {
-    "username": "janedoe",
+    "email": "janedoe@email.com",
     "password": "123",
     "firstName": "Jane",
     "lastName": "Doe",
@@ -32,11 +34,12 @@
     "gender" : "F",
     "address": "123 Fake Street",
     "city": "Chicago",
-    "state": "IL"
+    "state": "IL",
+    "major": "Mathematics"
   },
 
   {
-    "username": "johndoe",
+    "email": "johndoe@email.com",
     "password": "123",
     "firstName": "Jane",
     "lastName": "Doe",
@@ -44,11 +47,12 @@
     "gender" : "M",
     "address": "123 Fake Street",
     "city": "Chicago",
-    "state": "IL"
+    "state": "IL",
+    "major": "Information Technology"
   },
 
   {
-    "username": "imBatman",
+    "email": "imBatman@email.com",
     "password": "123",
     "firstName": "Bruce",
     "lastName": "Wayne",
@@ -56,11 +60,12 @@
     "gender" : "M",
     "address": "123 Fake Street",
     "city": "Chicago",
-    "state": "IL"
+    "state": "IL",
+    "major": "Entrepreneurship"
   },
 
   {
-    "username": "ironMan",
+    "email": "ironMan@email.com",
     "password": "123",
     "firstName": "Tony",
     "lastName": "Stark",
@@ -68,11 +73,12 @@
     "gender" : "M",
     "address": "123 Fake Street",
     "city": "Chicago",
-    "state": "IL"
+    "state": "IL",
+    "major": "Engineering"
   },
 
   {
-    "username": "hulk",
+    "email": "hulk@email.com",
     "password": "123",
     "firstName": "Bruce",
     "lastName": "Banner",
@@ -80,12 +86,13 @@
     "gender" : "M",
     "address": "123 Fake Street",
     "city": "Chicago",
-    "state": "IL"
+    "state": "IL",
+    "major": "Software Engineering"
   },
 
 
   {
-    "username": "testpilot",
+    "email": "testpilot@email.com",
     "password": "123",
     "firstName": "Hal",
     "lastName": "Jordan",
@@ -93,11 +100,12 @@
     "gender" : "M",
     "address": "123 Fake Street",
     "city": "Chicago",
-    "state": "IL"
+    "state": "IL",
+    "major": "Computer Science"
   },
 
   {
-    "username": "scarletspeedster",
+    "email": "scarletspeedster@email.com",
     "password": "123",
     "firstName": "Barry",
     "lastName": "Allen",
@@ -105,6 +113,7 @@
     "gender" : "M",
     "address": "123 Fake Street",
     "city": "Chicago",
-    "state": "IL"
+    "state": "IL",
+    "major": "Computer Science"
   }
 ]
