@@ -10,6 +10,8 @@
     "email": "email@gmail.com",
     "webpage": "www.oracle.com",
     "description": "Leading technology consultants"
+    "workAttitude": "['20', '15', '7', '19', '2', '5', '10', '8', '11', '21', '18', '12', '9', '14', '6', '13', '17', '3', '4', '1', '16']"
+
   },
 
   {
@@ -23,6 +25,8 @@
     "email": "email@gmail.com",
     "webpage": "www.groupon.com",
     "description": "The best deals"
+    "workAttitude": "['7', '11', '6', '21', '15', '16', '17', '10', '5', '8', '2', '3', '4', '1', '13', '18', '9', '19', '20', '14', '12']"
+
   },
 
   {
@@ -36,6 +40,8 @@
     "email": "email@gmail.com",
     "webpage": "www.spartzinc.com",
     "description": "Apps"
+    "workAttitude": "['10', '8', '13', '6', '14', '3', '21', '19', '2', '18', '4', '5', '12', '20', '15', '1', '7', '16', '17', '9', '11']"
+
   },
 
   {
@@ -49,6 +55,7 @@
     "email": "email@gmail.com",
     "webpage": "www.google.com",
     "description": "Google"
+    "workAttitude": "['6', '2', '10', '7', '1', '8', '15', '21', '20', '19', '17', '18', '12', '16', '3', '14', '5', '13', '11', '9', '4']"
   },
 
   {
@@ -62,6 +69,8 @@
     "email": "email@gmail.com",
     "webpage": "www.yahoo.com",
     "description": "Yahoo!"
+    "workAttitude": "['11', '14', '13', '9', '19', '18', '8', '7', '4', '12', '5', '16', '20', '21', '2', '10', '6', '17', '1', '15', '3']"
+
   },
 
   {
@@ -75,6 +84,8 @@
     "email": "email@gmail.com",
     "webpage": "www.davismeansbusiness.com",
     "description": "Avocados at Law"
+    "workAttitude": "['19', '3', '17', '11', '21', '7', '1', '10', '9', '12', '6', '14', '2', '15', '8', '4', '13', '20', '16', '18', '5']"
+
   },
 
   {
@@ -88,6 +99,7 @@
     "email": "email@gmail.com",
     "webpage": "www.google.com",
     "description": "Scientific and Technological Advanced Research Labs"
+    "workAttitude": "['13', '14', '17', '21', '11', '19', '5', '2', '7', '4', '12', '1', '8', '3', '20', '16', '18', '6', '9', '15', '10']"
   },
 
   {
@@ -101,6 +113,7 @@
     "email": "email@gmail.com",
     "webpage": "www.dccomics.com",
     "description": "We never fail the city"
+    "workAttitude": "['19', '13', '1', '18', '2', '3', '17', '4', '21', '15', '9', '11', '16', '8', '5', '6', '20', '14', '10', '12', '7']"
   },
 
   {
@@ -114,5 +127,6 @@
     "email": "email@gmail.com",
     "webpage": "www.dccomics.com",
     "description": "Protect the city"
+    "workAttitude": "['16', '14', '17', '3', '21', '15', '18', '7', '8', '10', '9', '11', '13', '20', '6', '12', '1', '5', '4', '2', '19']"
   }
 ]
