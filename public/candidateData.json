@@ -1,147 +1,400 @@
+
+
 [
 {
-  "email": "exampleuser@email.com",
-  "password": "abcdefg",
-  "firstName": "John",
-  "lastName": "Mueller",
-  "birthdate": "April 1, 1985",
-  "gender" : "M",
-  "address": "504 Chamberlain Lane",
-  "city": "Naperville",
-  "state": "IL",
-  "major": "Database Management"
-  "skillsSort": "['15', '14', '8', '12', '9', '16', '18', '2', '6', '5', '11', '17', '4', '13', '7', '19', '1', '10', '3']"
-  "workAttitude": "['12', '10', '14', '4', '18', '15', '1', '5', '9', '8', '11', '13', '3', '6', '21', '7', '2', '17', '20', '19', '16']"
+"local": {
+"email": "exampleuser@email.com",
+"password": "123",
+"candidate": {
+"firstname": "John",
+"lastname": "Mueller",
+"birthdate": "April 1, 1985",
+"address": "504 Chamberlain Lane",
+"city": "Naperville",
+"state": "IL",
+"school": "DePaul University",
+"major": "Database Management",
+  "skills": "['15', '14', '8', '12', '9', '16', '18', '2', '6', '5', '11', '17', '4', '13', '7', '19', '1', '10', '3']",
+  "culture": "['12', '10', '14', '4', '18', '15', '1', '5', '9', '8', '11', '13', '3', '6', '21', '7', '2', '17', '20', '19', '16']"
 
-
+}
+}
 },
 
 {
+"local": {
 "email": "newuser@email.com",
-"password": "abcdefghijk",
-"firstName": "Penelope",
-"lastName": "Smith",
+"password": "123",
+"candidate": {
+"firstname": "Penelope",
+"lastname": "Smith",
 "birthdate": "January 31, 1989",
-"gender" : "F",
 "address": "123 Fourth Street",
 "city": "Chicago",
 "state": "IL",
-  "major": "Computer Science"
-  "skillsSort": "['6', '16', '1', '19', '14', '7', '4', '10', '13', '12', '3', '9', '15', '8', '18', '11', '17', '2', '5']"
-  "workAttitude": "['11', '1', '10', '7', '20', '3', '5', '19', '12', '14', '9', '13', '16', '2', '8', '21', '15', '18', '4', '6', '17']"
+"school": "University of Chicago",
+"major": "Computer Science",
+  "skills": "['6', '16', '1', '19', '14', '7', '4', '10', '13', '12', '3', '9', '15', '8', '18', '11', '17', '2', '5']",
+  "culture": "['11', '1', '10', '7', '20', '3', '5', '19', '12', '14', '9', '13', '16', '2', '8', '21', '15', '18', '4', '6', '17']"
 
+}
+}
 },
 
-  {
-    "email": "janedoe@email.com",
-    "password": "123",
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "birthdate": "January 31, 1989",
-    "gender" : "F",
-    "address": "123 Fake Street",
-    "city": "Chicago",
-    "state": "IL",
-    "major": "Mathematics"
-    "skillsSort": "['5', '19', '6', '7', '10', '13', '16', '2', '11', '3', '8', '15', '18', '9', '4', '17', '1', '12', '14']"
-    "workAttitude": "['9', '18', '10', '17', '7', '2', '5', '6', '16', '15', '8', '19', '3', '14', '4', '11', '21', '13', '20', '12', '1']"
+{
+"local": {
+"email": "janedoe@email.com",
+"password": "123",
+"candidate": {
+"firstname": "Jane",
+"lastname": "Doe",
+"birthdate": "January 31, 1989",
+"address": "123 Fake Street",
+"city": "Chicago",
+"state": "IL",
+"school": "University of Illinois",
+"major": "Mathematics",
+  "skills": "['5', '19', '6', '7', '10', '13', '16', '2', '11', '3', '8', '15', '18', '9', '4', '17', '1', '12', '14']",
+  "culture": "['9', '18', '10', '17', '7', '2', '5', '6', '16', '15', '8', '19', '3', '14', '4', '11', '21', '13', '20', '12', '1']"
 
-  },
+}
+}
+},
 
-  {
-    "email": "johndoe@email.com",
-    "password": "123",
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "birthdate": "January 31, 1989",
-    "gender" : "M",
-    "address": "123 Fake Street",
-    "city": "Chicago",
-    "state": "IL",
-    "major": "Information Technology"
-    "skillsSort": "['6', '14', '8', '3', '15', '11', '5', '7', '2', '18', '9', '4', '12', '17', '16', '10', '19', '1', '13']"
-    "workAttitude": "['15', '9', '10', '7', '11', '21', '18', '13', '2', '5', '20', '12', '19', '3', '4', '1', '17', '14', '6', '8', '16']"
+{
+"local": {
+"email": "johndoe@email.com",
+"password": "123",
+"candidate": {
+"firstname": "Jane",
+"lastname": "Doe",
+"birthdate": "January 31, 1989",
+"address": "123 Fake Street",
+"city": "Chicago",
+"state": "IL",
+"school": "Purdue University",
+"major": "Information Technology",
+  "skills": "['6', '14', '8', '3', '15', '11', '5', '7', '2', '18', '9', '4', '12', '17', '16', '10', '19', '1', '13']",
+  "culture": "['15', '9', '10', '7', '11', '21', '18', '13', '2', '5', '20', '12', '19', '3', '4', '1', '17', '14', '6', '8', '16']"
 
-  },
+}
+}
+},
 
-  {
-    "email": "imBatman@email.com",
-    "password": "123",
-    "firstName": "Bruce",
-    "lastName": "Wayne",
-    "birthdate": "January 31, 1989",
-    "gender" : "M",
-    "address": "123 Fake Street",
-    "city": "Chicago",
-    "state": "IL",
-    "major": "Entrepreneurship"
-    "skillsSort": "['13', '1', '10', '18', '16', '2', '19', '15', '12', '5', '4', '6', '17', '3', '14', '9', '11', '7', '8']"
-    "workAttitude": "['13', '8', '9', '3', '12', '7', '14', '16', '1', '21', '11', '17', '20', '10', '4', '15', '6', '18', '5', '2', '19']"
-
-  },
-
-  {
-    "email": "ironMan@email.com",
-    "password": "123",
-    "firstName": "Tony",
-    "lastName": "Stark",
-    "birthdate": "January 31, 1989",
-    "gender" : "M",
-    "address": "123 Fake Street",
-    "city": "Chicago",
-    "state": "IL",
-    "major": "Engineering"
-    "skillsSort": "['2', '14', '5', '13', '9', '16', '11', '12', '17', '1', '18', '8', '10', '7', '6', '19', '15', '3', '4']"
-    "workAttitude": "['1', '11', '12', '20', '19', '14', '5', '7', '4', '17', '3', '8', '2', '18', '6', '13', '16', '21', '10', '9', '15']"
-
-  },
-
-  {
-    "email": "hulk@email.com",
-    "password": "123",
-    "firstName": "Bruce",
-    "lastName": "Banner",
-    "birthdate": "January 31, 1989",
-    "gender" : "M",
-    "address": "123 Fake Street",
-    "city": "Chicago",
-    "state": "IL",
-    "major": "Software Engineering"
-    "skillsSort": "['9', '19', '15', '4', '7', '1', '13', '6', '16', '14', '12', '18', '8', '11', '5', '2', '10', '17', '3']"
-    "workAttitude": "['9', '15', '2', '20', '14', '7', '16', '5', '21', '1', '8', '11', '10', '12', '18', '13', '17', '3', '4', '6', '19']"
-
-  },
+{
+"local": {
+"email": "imBatman@email.com",
+"password": "123",
+"candidate": {
+"firstname": "Bruce",
+"lastname": "Wayne",
+"birthdate": "January 31, 1989",
+"address": "123 Fake Street",
+"city": "Chicago",
+"state": "IL",
+"school": "Gotham State",
+"major": "Entrepreneurship",
+  "skills": "['13', '1', '10', '18', '16', '2', '19', '15', '12', '5', '4', '6', '17', '3', '14', '9', '11', '7', '8']",
+  "culture": "['13', '8', '9', '3', '12', '7', '14', '16', '1', '21', '11', '17', '20', '10', '4', '15', '6', '18', '5', '2', '19']"
 
 
-  {
-    "email": "testpilot@email.com",
-    "password": "123",
-    "firstName": "Hal",
-    "lastName": "Jordan",
-    "birthdate": "January 31, 1989",
-    "gender" : "M",
-    "address": "123 Fake Street",
-    "city": "Chicago",
-    "state": "IL",
-    "major": "Computer Science"
-    "skillsSort": "['8', '15', '12', '9', '3', '7', '10', '19', '6', '18', '11', '13', '2', '16', '5', '4', '14', '17', '1']"
-    "workAttitude": "['18', '4', '10', '13', '7', '14', '16', '5', '17', '12', '3', '21', '11', '20', '8', '19', '15', '9', '1', '6', '2']"
+}
+}
+},
 
-  },
+{
+"local": {
+"email": "ironMan@email.com",
+"password": "123",
+"candidate": {
+"firstname": "Tony",
+"lastname": "Stark",
+"birthdate": "January 31, 1989",
+"address": "123 Fake Street",
+"city": "Chicago",
+"state": "IL",
+"school": "University of Michigan",
+"major": "Engineering",
+  "skills": "['2', '14', '5', '13', '9', '16', '11', '12', '17', '1', '18', '8', '10', '7', '6', '19', '15', '3', '4']",
+  "culture": "['1', '11', '12', '20', '19', '14', '5', '7', '4', '17', '3', '8', '2', '18', '6', '13', '16', '21', '10', '9', '15']"
 
-  {
-    "email": "scarletspeedster@email.com",
-    "password": "123",
-    "firstName": "Barry",
-    "lastName": "Allen",
-    "birthdate": "January 31, 1989",
-    "gender" : "M",
-    "address": "123 Fake Street",
-    "city": "Chicago",
-    "state": "IL",
-    "major": "Computer Science"
-    "skillsSort": "['15', '17', '3', '10', '8', '9', '4', '1', '19', '5', '16', '2', '6', '7', '18', '12', '11', '14', '13']"
-    "workAttitude": "['1', '8', '7', '5', '9', '10', '6', '4', '20', '19', '14', '21', '18', '12', '11', '16', '2', '3', '13', '17', '15']"
+}
+}
+},
 
-  }
+{
+"local": {
+"email": "hulk@email.com",
+"password": "123",
+"candidate": {
+"firstname": "Bruce",
+"lastname": "Banner",
+"birthdate": "January 31, 1989",
+"address": "123 Fake Street",
+"city": "Chicago",
+"state": "IL",
+"school": "Northwestern University",
+"major": "Software Engineering",
+  "skills": "['9', '19', '15', '4', '7', '1', '13', '6', '16', '14', '12', '18', '8', '11', '5', '2', '10', '17', '3']",
+  "culture": "['9', '15', '2', '20', '14', '7', '16', '5', '21', '1', '8', '11', '10', '12', '18', '13', '17', '3', '4', '6', '19']"
+
+}
+}
+},
+
+
+{
+"local": {
+"email": "testpilot@email.com",
+"password": "123",
+"candidate": {
+"firstname": "Hal",
+"lastname": "Jordan",
+"birthdate": "January 31, 1989",
+"address": "123 Fake Street",
+"city": "Chicago",
+"state": "IL",
+"school": "Massachusetts Institute of Technology",
+"major": "Computer Science",
+  "skills": "['8', '15', '12', '9', '3', '7', '10', '19', '6', '18', '11', '13', '2', '16', '5', '4', '14', '17', '1']",
+  "culture": "['18', '4', '10', '13', '7', '14', '16', '5', '17', '12', '3', '21', '11', '20', '8', '19', '15', '9', '1', '6', '2']"
+
+}
+}
+},
+
+{
+"local": {
+"email": "scarletspeedster@email.com",
+"password": "123",
+"candidate": {
+"firstname": "Barry",
+"lastname": "Allen",
+"birthdate": "January 31, 1989",
+"address": "123 Fake Street",
+"city": "Chicago",
+"state": "IL",
+"school": "Stanford University",
+"major": "Computer Science",
+"skills": "['15', '17', '3', '10', '8', '9', '4', '1', '19', '5', '16', '2', '6', '7', '18', '12', '11', '14', '13']",
+"culture": "['1', '8', '7', '5', '9', '10', '6', '4', '20', '19', '14', '21', '18', '12', '11', '16', '2', '3', '13', '17', '15']"
+
+}
+}
+},
+{
+"local": {
+"companyname": "Oracle",
+"compassword": "1234",
+"company": {
+"firstname": "Jake",
+"lastname": "Mueller",
+"address": "123 Real St",
+"city": "Chicago",
+"state": "IL",
+"email": "email@gmail.com",
+"webpage": "www.oracle.com",
+"description": "Leading technology consultants",
+  "culture": "['20', '15', '7', '19', '2', '5', '10', '8', '11', '21', '18', '12', '9', '14', '6', '13', '17', '3', '4', '1', '16']",
+
+  "jobs": [
+{
+"title": "Mean Stack Developer",
+"jobdescription": "Develop awesome websites. Have a lot of fun. Learn a lot of things.",
+"city": "Schaumburg",
+"state": "IL"
+},
+{
+"title": "COBOL Programmer",
+"jobdescription": "Yes, we still need these. This is a great job for you if you like old programming languages.",
+"city": "New York City",
+"state": "NY"
+},
+{
+"title": "SQL Database Administrator",
+"jobdescription": "We still believe. What is this NoSQL stuff anyway?.",
+"city": "San Jose",
+"state": "CA"
+}
+]
+}
+}
+},
+{
+"local": {
+"companyname": "Groupon",
+"compassword": "1234",
+"company": {
+"firstname": "Caitlin",
+"lastname": "Frost",
+"address": "123 Real St",
+"city": "Chicago",
+"state": "IL",
+"email": "email@gmail.com",
+"webpage": "www.groupon.com",
+"description": "The best deals",
+  "culture": "['7', '11', '6', '21', '15', '16', '17', '10', '5', '8', '2', '3', '4', '1', '13', '18', '9', '19', '20', '14', '12']",
+
+  "jobs": {
+"title": "IT Project Manager",
+"jobdescription": "We utilize Agile development.",
+"city": "Oakbrook",
+"state": "IL"
+}
+}
+}
+},
+{
+"local": {
+"companyname": "Spartz",
+"compassword": "1234",
+"company": {
+"firstname": "Ray",
+"lastname": "Palmer",
+"address": "123 Real St",
+"city": "Chicago",
+"state": "IL",
+"email": "email@gmail.com",
+"webpage": "www.spartzinc.com",
+"description": "Apps",
+  "culture": "['10', '8', '13', '6', '14', '3', '21', '19', '2', '18', '4', '5', '12', '20', '15', '1', '7', '16', '17', '9', '11']"
+
+}
+}
+},
+{
+"local": {
+"companyname": "Google",
+"compassword": "1234",
+"company": {
+"firstname": "Cisco",
+"lastname": "Ramon",
+"address": "123 Real St",
+"city": "Mountain View",
+"state": "CA",
+"email": "email@gmail.com",
+"webpage": "www.google.com",
+"description": "Google",
+  "culture": "['6', '2', '10', '7', '1', '8', '15', '21', '20', '19', '17', '18', '12', '16', '3', '14', '5', '13', '11', '9', '4']",
+  "jobs": [
+{
+"title": "Senior Software Engineer",
+"jobdescription": "Help design, implement, and test the newest SEO technology.",
+"city": "Mountain View",
+"state": "CA"
+},
+{
+"title": "Software Engineeer",
+"jobdescription": "Entry level. Start your career with one of the leading technology firms in the world.",
+"city": "Mountain View",
+"state": "CA"
+}
+]
+}
+}
+},
+{
+"local": {
+"companyname": "Yahoo",
+"compassword": "1234",
+"company": {
+"firstname": "Froggy",
+"lastname": "Bear",
+"address": "123 Real St",
+"city": "Mountain View",
+"state": "CA",
+"email": "email@gmail.com",
+"webpage": "www.yahoo.com",
+"description": "Yahoo!",
+  "culture": "['11', '14', '13', '9', '19', '18', '8', '7', '4', '12', '5', '16', '20', '21', '2', '10', '6', '17', '1', '15', '3']"
+
+}
+}
+},
+{
+"local": {
+"companyname": "Nelson and Murdock",
+"compassword": "1234",
+"company": {
+"firstname": "Matt",
+"lastname": "Murdock",
+"address": "123 Real St",
+"city": "New York",
+"state": "NY",
+"email": "email@gmail.com",
+"webpage": "www.davismeansbusiness.com",
+"description": "Avocados at Law",
+  "culture": "['19', '3', '17', '11', '21', '7', '1', '10', '9', '12', '6', '14', '2', '15', '8', '4', '13', '20', '16', '18', '5']"
+
+}
+}
+},
+{
+"local": {
+"companyname": "S.T.A.R. Labs",
+"compassword": "1234",
+"company": {
+"firstname": "Harrison",
+"lastname": "Wells",
+"address": "123 Real St",
+"city": "Chicago",
+"state": "IL",
+"email": "email@gmail.com",
+"webpage": "www.google.com",
+"description": "Scientific and Technological Advanced Research Labs",
+  "culture": "['13', '14', '17', '21', '11', '19', '5', '2', '7', '4', '12', '1', '8', '3', '20', '16', '18', '6', '9', '15', '10']",
+
+  "jobs": {
+"title": "Inventor/Innovator",
+"jobdescription": "Classified.",
+"city": "San Francisco",
+"state": "CA"
+}
+}
+}
+},
+{
+"local": {
+"companyname": "Queen Industries",
+"compassword": "1234",
+"company": {
+"firstname": "Oliver",
+"lastname": "Queen",
+"address": "123 Real St",
+"city": "Seattle",
+"state": "WA",
+"email": "email@gmail.com",
+"webpage": "www.dccomics.com",
+"description": "We never fail the city",
+  "culture": "['19', '13', '1', '18', '2', '3', '17', '4', '21', '15', '9', '11', '16', '8', '5', '6', '20', '14', '10', '12', '7']",
+
+  "jobs":   {
+"title": "Software Engineeer",
+"jobdescription": "Help develop the best new weapons.",
+"city": "Seattle",
+"state": "WA"
+}
+}
+}
+},
+{
+"local": {
+"companyname": "Wayne Tech",
+"compassword": "1234",
+"company": {
+"firstname": "Lucius",
+"lastname": "Fox",
+"address": "123 Real St",
+"city": "Chicago",
+"state": "IL",
+"email": "email@gmail.com",
+"webpage": "www.dccomics.com",
+"description": "Protect the city",
+  "culture": "['16', '14', '17', '3', '21', '15', '18', '7', '8', '10', '9', '11', '13', '20', '6', '12', '1', '5', '4', '2', '19']"
+
+}
+}
+}
+
+
 ]

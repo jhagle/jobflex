@@ -4,21 +4,24 @@
 
 //Initialize variables.
 
-    var mongoose = require('mongoose');
-    var fs = require('fs');
-    var candidateContent = String(fs.readFileSync('./candidateData.json','UTF-8'));
-    var companyContent = String(fs.readFileSync('./companyData.json','UTF-8'));
-    var jobContent = String(fs.readFileSync('./jobListing.json','UTF-8'));
-    var candidateData = JSON.parse(candidateContent);
-    var companyData = JSON.parse(companyContent);
-    var jobData = JSON.parse(jobContent);
-    var candidateLength = candidateData.length;
-    var companyLength = companyData.length;
-    var jobLength = jobData.length;
+var mongoose = require('mongoose');
+var fs = require('fs');
+var bcrypt   = require('bcrypt-nodejs');
+var configDB = require('../config/database.js');
+
+var userContent = String(fs.readFileSync('./candidateData.json','UTF-8'));
+var companyContent = String(fs.readFileSync('./companyData.json','UTF-8'));
+var jobContent = String(fs.readFileSync('./jobListing.json','UTF-8'));
+var userData = JSON.parse(userContent);
+var companyData = JSON.parse(companyContent);
+var jobData = JSON.parse(jobContent);
+var userLength = userData.length;
+var companyLength = companyData.length;
+var jobLength = jobData.length;
 
 //Connect to database. Database 'jobflex' is automatically created if it does not previously exist.
 
-mongoose.connect('mongodb://admin:admin@proximus.modulusmongo.net:27017/uxaz8uZi');
+mongoose.connect(configDB.url);
 
 /*Test connection*/
 
@@ -32,36 +35,71 @@ db.once('open', function (callback) {
 //Schema methods are not yet implemented. Most options are also not set.
 
 
-var candidateSchema = mongoose.Schema(
-    {
-        email: {type: String, required: true, unique: true},
-        password : String,
-        firstName : String,
-        lastName : String,
-        birthdate : Date,
-        gender : String,
-        address : String,
-        city : String,
-        state : String,
-        created : {type: Date, default: Date.now},
-        webpage: String,
-        pic: Buffer,
-        major: String,
-        resume: Buffer,
-        references: mongoose.Schema.Types.Mixed,
-        skillsSort: Array,
-        workAttitude: Array
+var userSchema = mongoose.Schema({
+        local: {
+            email: String,
+            password: String,
+            candidate: {
+                firstname: String,
+                lastname: String,
+                birthdate: Date,
+                school: String,
+                major: String,
+                culture: {type: Array, "default": []},
+                skills: {type: Array, "default": []},
+                created: {type: Date, default: Date.now},
+                joblist: {type: Array, "default": []}
+            },
+            companyname: String,
+            compassword: String,
+            company: {
+                firstname: String,
+                lastname: String,
+                address: String,
+                city: String,
+                state: String,
+                email: String,
+                webpage: String,
+                description: String,
+                culture: Array,
+                created: {type: Date, default: Date.now},
+                jobs: {
+                    title: String,
+                    jobdescription: String,
+                    city: String,
+                    state: String,
+                    posted: {type: Date, default: Date.now},
+                    skills: Array
+                }
+            }
+
+        },
+        facebook: {
+            id: String,
+            token: String,
+            email: String,
+            name: String
+        },
+        linkedin         : {
+            id           : String,
+            token        : String,
+            email        : String,
+            name         : String
+        }
 
     }
+
 )
 
-var companySchema = mongoose.Schema(
-    {
-        companyName : {type: String, required: true, unique: true},
+var companySchema = mongoose.Schema({
+
+    local            : {
+        companyname : String,
+        cleartext: String,
         password: String,
         corporateId : Number,
-        firstName : String,
-        lastName : String,
+        firstname : String,
+        lastname : String,
         address : String,
         city : String,
         state : String,
@@ -70,58 +108,113 @@ var companySchema = mongoose.Schema(
         webpage: String,
         logo: Buffer,
         description: String,
-            workAttitude: Array
+        culture: Array
     }
-)
+
+})
 
 var jobSchema = mongoose.Schema(
     {
-        companyName: String,
+        companyname: String,
         title: String,
-        jobDescription: String,
+        jobdescription: String,
         city: String,
         state: String,
         datePosted: {type: Date, default: Date.now},
-        skillsSort: Array
+        skills: Array
     }
 )
+
 
 //Create models. Mongoose automatically pluralizes collection names, so don't be alarmed when you see
 //'candidates' or 'companies' if you are using MongoDB shell.
 
-var candidate = mongoose.model('candidate', candidateSchema)
+var user = mongoose.model('user', userSchema)
 var company = mongoose.model('company', companySchema)
 var job = mongoose.model('job', jobSchema)
+
+
+userSchema.pre('save', function(next) {
+    var user = this;
+
+    // only hash the password if it has been modified (or is new)
+    //if (!user.isModified('local.password')) {return next();};
+    //if (!user.isModified('local.compassword')) {return next();};
+
+    // generate a salt
+    bcrypt.genSalt(8, function(err, salt) {
+        if (err) return next(err);
+
+        // hash the password along with our new salt
+        bcrypt.hash(user.local.password, salt, null, function(err, hash) {
+            if (err) {return next(err);}
+
+            // override the cleartext password with the hashed one
+            user.local.password = hash;
+        });
+
+        bcrypt.hash(user.local.compassword, salt, null, function(err, hash) {
+            if (err) {return next(err);}
+
+            // override the cleartext password with the hashed one
+            user.local.compassword = hash;
+            next();
+        });
+    });
+
+});
+
+companySchema.pre('save', function(next) {
+    var company = this;
+    company.local.cleartext = company.local.password;
+
+    // only hash the password if it has been modified (or is new)
+    if (!company.isModified('local.password')) return next();
+
+    // generate a salt
+    bcrypt.genSalt(8, function(err, salt) {
+        if (err) return next(err);
+
+        // hash the password along with our new salt
+        bcrypt.hash(company.local.password, salt, null, function(err, hash) {
+            if (err) {return next(err);}
+
+            // override the cleartext password with the hashed one
+            company.local.password = hash;
+            next();
+        });
+    });
+});
 
 
 //Populate candidate collection if there is data in companyData.json
 
 
-    for (var i = 0; i < candidateLength; i++) {
-        var populateCandidate = new candidate(candidateData[i]);
-        populateCandidate.save(function (err, data) {
-            if (err) console.log(err);
-            else console.log('Saved : ', data);
-        });
-    };
+for (var i = 0; i < userLength; i++) {
+    var populateUser = new user(userData[i]);
+    populateUser.save(function (err, data) {
+        if (err) console.log(err);
+        else console.log('Saved : ', data);
+    });
+};
 
 
 //Populate company collection if there is data in companyData.json
 
 
-    for (var i = 0; i < companyLength; i++) {
-        var populateCompany = new company(companyData[i]);
-        populateCompany.save(function (err, data) {
-            if (err) console.log(err);
-            else console.log('Saved : ', data);
-        });
-    };
+for (var i = 0; i < companyLength; i++) {
+    var populateCompany = new company(companyData[i]);
+    populateCompany.save(function (err, data) {
+        if (err) console.log(err);
+        else console.log('Saved : ', data);
+    });
+};
 
-    for (var i = 0; i < jobLength; i++) {
-        var populateJob = new job(jobData[i]);
-        populateJob.save(function (err, data) {
-            if (err) console.log(err);
-            else console.log('Saved : ', data);
-        });
-    };
+for (var i = 0; i < jobLength; i++) {
+    var populateJob = new job(jobData[i]);
+    populateJob.save(function (err, data) {
+        if (err) console.log(err);
+        else console.log('Saved : ', data);
+    });
+};
 

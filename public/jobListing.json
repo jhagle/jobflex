@@ -1,118 +1,60 @@
 [
   {
-    "companyName": "Oracle",
-    "password": "1234",
-    "firstName": "Jake",
-    "lastName": "Mueller",
-    "address": "123 Real St",
-    "city": "Chicago",
-    "state": "IL",
-    "email": "email@gmail.com",
-    "webpage": "www.oracle.com",
-    "description": "Leading technology consultants"
+    "companyname": "Oracle",
+    "title": "Mean Stack Developer",
+    "jobdescription": "Develop awesome websites. Have a lot of fun. Learn a lot of things.",
+    "city": "Schaumburg",
+    "state": "IL"
   },
 
   {
-    "companyName": "Groupon",
-    "password": "1234",
-    "firstName": "Caitlin",
-    "lastName": "Frost",
-    "address": "123 Real St",
-    "city": "Chicago",
-    "state": "IL",
-    "email": "email@gmail.com",
-    "webpage": "www.groupon.com",
-    "description": "The best deals"
-  },
+    "companyname": "Oracle",
+    "title": "COBOL Programmer",
+    "jobdescription": "Yes, we still need these. This is a great job for you if you like old programming languages.",
+    "city": "New York City",
+    "state": "NY"
 
+  },
   {
-    "companyName": "Spartz",
-    "password": "1234",
-    "firstName": "Ray",
-    "lastName": "Palmer",
-    "address": "123 Real St",
-    "city": "Chicago",
-    "state": "IL",
-    "email": "email@gmail.com",
-    "webpage": "www.spartzinc.com",
-    "description": "Apps"
+    "companyname": "Oracle",
+    "title": "SQL Database Administrator",
+    "jobdescription": "We still believe. What is this NoSQL stuff anyway?.",
+    "city": "San Jose",
+    "state": "CA"
   },
-
+  {
+    "title": "IT Project Manager",
+    "jobdescription": "We utilize Agile development.",
+    "city": "Oakbrook",
+    "state": "IL"
+  },
   {
     "companyName": "Google",
-    "password": "1234",
-    "firstName": "Cisco",
-    "lastName": "Ramon",
-    "address": "123 Real St",
+    "title": "Senior Software Engineer",
+    "jobdescription": "Help design, implement, and test the newest SEO technology.",
     "city": "Mountain View",
-    "state": "CA",
-    "email": "email@gmail.com",
-    "webpage": "www.google.com",
-    "description": "Google"
+    "state": "CA"
   },
-
   {
-    "companyName": "Yahoo",
-    "password": "1234",
-    "firstName": "Froggy",
-    "lastName": "Bear",
-    "address": "123 Real St",
+    "companyName": "Google",
+    "title": "Software Engineeer",
+    "jobdescription": "Entry level. Start your career with one of the leading technology firms in the world.",
     "city": "Mountain View",
-    "state": "CA",
-    "email": "email@gmail.com",
-    "webpage": "www.yahoo.com",
-    "description": "Yahoo!"
+    "state": "CA"
   },
-
-  {
-    "companyName": "Nelson and Murdock",
-    "password": "1234",
-    "firstName": "Matt",
-    "lastName": "Murdock",
-    "address": "123 Real St",
-    "city": "New York",
-    "state": "NY",
-    "email": "email@gmail.com",
-    "webpage": "www.davismeansbusiness.com",
-    "description": "Avocados at Law"
-  },
-
   {
     "companyName": "S.T.A.R. Labs",
-    "password": "1234",
-    "firstName": "Harrison",
-    "lastName": "Wells",
-    "address": "123 Real St",
-    "city": "Chicago",
-    "state": "IL",
-    "email": "email@gmail.com",
-    "webpage": "www.google.com",
-    "description": "Scientific and Technological Advanced Research Labs"
+    "title": "Inventor/Innovator",
+    "jobdescription": "Classified.",
+    "city": "San Francisco",
+    "state": "CA"
   },
-
   {
     "companyName": "Queen Industries",
-    "password": "1234",
-    "firstName": "Oliver",
-    "lastName": "Queen",
-    "address": "123 Real St",
+    "title": "Software Engineeer",
+    "jobdescription": "Help develop the best new weapons.",
     "city": "Seattle",
-    "state": "WA",
-    "email": "email@gmail.com",
-    "webpage": "www.dccomics.com",
-    "description": "We never fail the city"
-  },
-
-  {
-    "companyName": "Wayne Tech",
-    "password": "1234",
-    "firstName": "Lucius",
-    "lastName": "Fox",
-    "address": "123 Real St",
-    "city": "Chicago",
-    "state": "IL",
-    "email": "email@gmail.com",
-    "webpage": "www.dccomics.com",
-    "description": "Protect the city"
+    "state": "WA"
   }
+
 ]
