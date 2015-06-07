@@ -6,13 +6,13 @@ var bcrypt   = require('bcrypt-nodejs');
 // define the schema for our company model
 var companySchema = mongoose.Schema({
 
-    local            : {
-        companyemail : String,
-        password     : String,
-        companyname  : String,
-        culture : { type : Array , "default" : [] },
-        skills : { type : Array , "default" : [] }
-    }
+
+    companyemail : String,
+    _creator :  [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    password     : String,
+    companyname  : String,
+    culture : { type : Array , "default" : [] },
+    skills : { type : Array , "default" : [] }
 
 });
 
@@ -28,4 +28,6 @@ companySchema.methods.validPassword = function(password) {
 };
 
 // create the model for users and expose it to our app
-module.exports = mongoose.model('Company', companySchema);
+var Company = mongoose.model('Company', companySchema);
+
+module.exports = Company;

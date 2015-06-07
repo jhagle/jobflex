@@ -1,4 +1,6 @@
 // app/routes.js
+
+
 module.exports = function(app, passport) {
 //Candidate
     // =====================================
@@ -55,7 +57,7 @@ module.exports = function(app, passport) {
     });
 
     // process the signup form
-    app.post('/companysignup', passport.authenticate('local-signup', {
+    app.post('/companysignup', passport.authenticate('company-signup', {
         successRedirect : '/companyprofile', // redirect to the secure profile section
         failureRedirect : '/companysignup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
@@ -85,6 +87,19 @@ module.exports = function(app, passport) {
     }));
 
 
+    // =====================================
+    // COMPANY PROFILE SECTION =============
+    // =====================================
+    // we will want this protected so you have to be logged in to visit
+    // we will use route middleware to verify this (the isLoggedIn function)
+    app.get('/companyprofile', isLoggedIn, function(req, res) {
+
+        res.render('companyprofile.ejs', {
+                user : req.user // get the company out of session and pass to template
+            }
+
+        );
+    });
 
 
     //Company
@@ -100,23 +115,38 @@ module.exports = function(app, passport) {
     });
 
     // process the login form
-    app.post('/companylogin', passport.authenticate('local-signup', {
+    app.post('/companylogin', passport.authenticate('company-login', {
         successRedirect : '/companyprofile', // redirect to the secure profile section
         failureRedirect : '/companylogin', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
 
+    // =====================================
+    // FACEBOOK ROUTES =====================
+    // =====================================
+    // route for facebook authentication and login
+    app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+
+    // handle the callback after facebook has authenticated the user
+    app.get('/auth/facebook/callback',
+        passport.authenticate('facebook', {
+            successRedirect : '/profile',
+            failureRedirect : '/signup'
+        }));
 
     // =====================================
-    // COMPANY PROFILE SECTION =============
+    // LINKEDIN ROUTES =====================
     // =====================================
-    // we will want this protected so you have to be logged in to visit
-    // we will use route middleware to verify this (the isLoggedIn function)
-    app.get('/companyprofile', isLoggedIn, function(req, res) {
-        res.render('companyprofile.ejs', {
-            user : req.user // get the company out of session and pass to template
+    // route for LINKEDIN authentication and login
+    app.get('/auth/linkedin',
+        passport.authenticate('linkedin'));
+
+    app.get('/auth/linkedin/callback',
+        passport.authenticate('linkedin', { failureRedirect: '/login' }),
+        function(req, res) {
+            // Successful authentication, redirect home.
+            res.redirect('/');
         });
-    });
 
 
     // =====================================
