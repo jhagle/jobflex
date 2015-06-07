@@ -4,7 +4,8 @@
     "title": "Mean Stack Developer",
     "jobdescription": "Develop awesome websites. Have a lot of fun. Learn a lot of things.",
     "city": "Schaumburg",
-    "state": "IL"
+    "state": "IL",
+    "skills": ["4", "14", "6", "8", "17", "10", "2", "7", "16", "9", "3", "1", "19", "15", "13", "11", "5", "18", "12"]
   },
 
   {
@@ -12,49 +13,57 @@
     "title": "COBOL Programmer",
     "jobdescription": "Yes, we still need these. This is a great job for you if you like old programming languages.",
     "city": "New York City",
-    "state": "NY"
-
+    "state": "NY",
+    "skills": ["12", "4", "14", "17", "5", "11", "6", "1", "19", "16", "9", "2", "18", "15", "3", "7", "13", "10", "8"]
   },
   {
     "companyname": "Oracle",
     "title": "SQL Database Administrator",
     "jobdescription": "We still believe. What is this NoSQL stuff anyway?.",
     "city": "San Jose",
-    "state": "CA"
+    "state": "CA",
+    "skills": ["10", "13", "9", "15", "16", "14", "11", "7", "12", "3", "1", "17", "4", "18", "8", "19", "5", "2", "6"]
   },
   {
     "title": "IT Project Manager",
     "jobdescription": "We utilize Agile development.",
     "city": "Oakbrook",
-    "state": "IL"
+    "state": "IL",
+    "skills": ["14", "5", "10", "9", "1", "19", "8", "4", "13", "2", "3", "12", "6", "18", "16", "15", "7", "11", "17"]
+
   },
   {
     "companyName": "Google",
     "title": "Senior Software Engineer",
     "jobdescription": "Help design, implement, and test the newest SEO technology.",
     "city": "Mountain View",
-    "state": "CA"
+    "state": "CA",
+    "skills": ["5", "8", "18", "4", "13", "9", "3", "2", "10", "11", "19", "16", "12", "7", "17", "14", "15", "1", "6"]
   },
   {
     "companyName": "Google",
     "title": "Software Engineeer",
     "jobdescription": "Entry level. Start your career with one of the leading technology firms in the world.",
     "city": "Mountain View",
-    "state": "CA"
+    "state": "CA",
+    "skills": ["3", "19", "8", "15", "14", "4", "7", "9", "11", "13", "2", "5", "6", "1", "10", "12", "18", "16", "17"]
   },
   {
     "companyName": "S.T.A.R. Labs",
     "title": "Inventor/Innovator",
     "jobdescription": "Classified.",
     "city": "San Francisco",
-    "state": "CA"
+    "state": "CA",
+    "skills": ["4", "1", "18", "3", "10", "8", "7", "2", "9", "16", "12", "15", "11", "6", "17", "5", "19", "14", "13"]
+
   },
   {
     "companyName": "Queen Industries",
     "title": "Software Engineeer",
     "jobdescription": "Help develop the best new weapons.",
     "city": "Seattle",
-    "state": "WA"
+    "state": "WA",
+    "skills": ["16", "3", "19", "6", "8", "1", "14", "7", "10", "18", "5", "9", "15", "2", "12", "11", "13", "4", "17"]
   }
 
 ]
