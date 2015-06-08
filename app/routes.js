@@ -1,5 +1,8 @@
 // app/routes.js
-
+//Require each of our models.
+var User = require('../app/models/user');
+var Company = require('../app/models/company');
+var Job = require('../app/models/job');
 
 module.exports = function(app, passport) {
 //Candidate
@@ -92,13 +95,19 @@ module.exports = function(app, passport) {
     // =====================================
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
-    app.get('/companyprofile', isLoggedIn, function(req, res) {
+ app.get('/companyprofile', isLoggedIn, function(req, res) {
+        //Query the Company collection and display results that match the logged in user.
+        Company.findOne({'companyname': req.user.local.companyname}, function (err, company) {
+            if (err) return (err);
+            console.log(company);
 
-        res.render('companyprofile.ejs', {
-                user : req.user // get the company out of session and pass to template
-            }
+            res.render('companyprofile.ejs', {
+                    company: company,
+                    user: req.user // get the company out of session and pass to template
 
-        );
+                }
+            );
+        });
     });
 
 
