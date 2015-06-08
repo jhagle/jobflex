@@ -1,7 +1,6 @@
 [
   {
     "companyname": "Oracle",
-    //"_creator": "5572C1F62BC72ED407196C5B",
     "password": "1234",
     "firstname": "Jake",
     "lastname": "Mueller",
@@ -16,7 +15,6 @@
 
   {
     "companyname": "Groupon",
-    // "_creator": "5572C1F62BC72ED407196C5C",
     "password": "1234",
     "firstname": "Caitlin",
     "lastname": "Frost",
@@ -33,7 +31,6 @@
 
   {
     "companyname": "Spartz",
-    // "_creator": "5572C1F62BC72ED407196C5D",
     "password": "1234",
     "firstname": "Ray",
     "lastname": "Palmer",
@@ -49,7 +46,6 @@
 
   {
     "companyname": "Google",
-    // "_creator": "5572C1F62BC72ED407196C5E",
     "password": "1234",
     "firstname": "Cisco",
     "lastname": "Ramon",
@@ -66,7 +62,6 @@
 
   {
     "companyname": "Yahoo",
-    // "_creator": "5572C1F62BC72ED407196C5F",
     "password": "1234",
     "firstname": "Froggy",
     "lastname": "Bear",
@@ -83,7 +78,6 @@
 
   {
     "companyname": "Nelson and Murdock",
-    //"_creator": "5572C1F62BC72ED407196C60",
     "password": "1234",
     "firstname": "Matt",
     "lastname": "Murdock",
@@ -99,7 +93,6 @@
 
   {
     "companyname": "S.T.A.R. Labs",
-    //"_creator": "5572C1F62BC72ED407196C61",
     "password": "1234",
     "firstname": "Harrison",
     "lastname": "Wells",
@@ -115,7 +108,6 @@
 
   {
     "companyname": "Queen Industries",
-    // "_creator": "5572C1F62BC72ED407196C62",
     "password": "1234",
     "firstname": "Oliver",
     "lastname": "Queen",
@@ -130,7 +122,6 @@
 
   {
     "companyname": "Wayne Tech",
-    // "_creator": "5572C1F62BC72ED407196C63",
     "password": "1234",
     "firstname": "Lucius",
     "lastname": "Fox",
