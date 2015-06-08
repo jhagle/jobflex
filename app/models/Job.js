@@ -5,7 +5,7 @@
 var mongoose = require('mongoose');
 
 // define the schema for our company model
-var jobsSchema = mongoose.Schema({
+var jobSchema = mongoose.Schema({
 
         companyname: String,
         title: String,
@@ -19,7 +19,7 @@ var jobsSchema = mongoose.Schema({
 );
 
 // create the model for users and expose it to our app
-var Jobs = mongoose.model('Jobs', jobsSchema);
+var Job = mongoose.model('Job', jobSchema);
 
-module.exports = Jobs;
+module.exports = Job;
 
