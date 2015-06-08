@@ -8,7 +8,6 @@ var companySchema = mongoose.Schema({
 
 
     companyemail : String,
-    _creator :  [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     password     : String,
     companyname  : String,
     culture : { type : Array , "default" : [] },
