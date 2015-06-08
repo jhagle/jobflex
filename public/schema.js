@@ -40,7 +40,6 @@ var userSchema = mongoose.Schema({
             usertype: String,
             email: String,
             password: String,
-            companyref: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Company' }],
             candidate: {
                 firstname: String,
                 lastname: String,
@@ -97,7 +96,6 @@ var companySchema = mongoose.Schema({
 
 
     companyname : String,
-    _creator :  [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     password: String,
     corporateId : Number,
     firstname : String,
@@ -131,9 +129,11 @@ var jobSchema = mongoose.Schema(
 //Create models. Mongoose automatically pluralizes collection names, so don't be alarmed when you see
 //'candidates' or 'companies' if you are using MongoDB shell.
 
-var user = mongoose.model('user', userSchema)
-var company = mongoose.model('company', companySchema)
-var job = mongoose.model('job', jobSchema)
+var user = mongoose.model('user', userSchema);
+var company = mongoose.model('company', companySchema);
+var job = mongoose.model('job', jobSchema);
+
+
 
 
 userSchema.pre('save', function(next) {
@@ -221,4 +221,5 @@ for (var i = 0; i < jobLength; i++) {
         else console.log('Saved : ', data);
     });
 };
+
 
