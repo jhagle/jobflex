@@ -7,7 +7,8 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 
 // load up the user model
-var User       		= require('../app/models/user');
+var User = require('../app/models/user');
+var Company = require('../app/models/company');
 
 // load the auth variables
 var configAuth = require('./auth');
@@ -222,20 +223,36 @@ module.exports = function(passport) {
                     // if there is no user with that email
                     // create the user
                     var newUser = new User();
+                    var newCompany = new Company();
 
                     // set the Company's local credentials
+
                     newUser.local.companyname = companyname;
                     newUser.local.compassword = newUser.generateHash(password); // use the generateHash function in our Company model
-                    newUser.local.company.firstname = req.param('firstname');
-                    newUser.local.company.lastname = req.param('lastname');
-                    newCompany.local.company.culture = req.param('culture');
+                    newUser.local.company.email = req.param('email');
+                    newUser.companyref = newCompany;
+                    newCompany.companyname = companyname;
+                    newCompany.password = newUser.local.compassword;
+                    newCompany._creator = newUser;
+
+                    //newUser.local.company.firstname = req.param('firstname');
+                    //newUser.local.company.lastname = req.param('lastname');
+                    //newUser.local.company.culture = req.param('culture');
 
                     // save the Company
-                    newUser.save(function (err) {
+                    newCompany.save(function (err, data) {
+
+                        console.log('Saved : ', data);
+                        return (null, newCompany);
+                    });
+
+                    newUser.save(function (err, data) {
                         if (err)
                             throw err;
+                        else console.log('Saved : ', data);
                         return done(null, newUser);
                     });
+
                 }
 
             });

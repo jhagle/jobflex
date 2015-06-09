@@ -1,4 +1,9 @@
 // app/routes.js
+//Require each of our models.
+var User = require('../app/models/user');
+var Company = require('../app/models/company');
+var Job = require('../app/models/job');
+
 module.exports = function(app, passport) {
 //Candidate
     // =====================================
@@ -55,12 +60,11 @@ module.exports = function(app, passport) {
     });
 
     // process the signup form
-    app.post('/companysignup', passport.authenticate('local-signup', {
+    app.post('/companysignup', passport.authenticate('company-signup', {
         successRedirect : '/companyprofile', // redirect to the secure profile section
         failureRedirect : '/companysignup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
-
 
     // =====================================
     // PROFILE SECTION =====================
@@ -68,8 +72,15 @@ module.exports = function(app, passport) {
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
     app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
-            user : req.user // get the user out of session and pass to template
+
+        Company.find({}, function (err, company) {
+            if (err) return (err);
+            console.log(company);
+            res.render('profile.ejs', {
+                company: company,
+                user : req.user
+            }
+        ); // get the user out of session and pass to template
         });
     });
     //Go to edit Profile
@@ -85,6 +96,30 @@ module.exports = function(app, passport) {
     }));
 
 
+<<<<<<< HEAD
+=======
+    // =====================================
+    // COMPANY PROFILE SECTION =============
+    // =====================================
+    // we will want this protected so you have to be logged in to visit
+    // we will use route middleware to verify this (the isLoggedIn function)
+ app.get('/companyprofile', isLoggedIn, function(req, res) {
+        //Query the Company collection and display results that match the logged in user.
+        Company.findOne({'companyname': req.user.local.companyname}, function (err, company) {
+            if (err) return (err);
+            console.log(company);
+
+            res.render('companyprofile.ejs', {
+                    company: company,
+                    user: req.user // get the company out of session and pass to template
+
+                }
+            );
+        });
+    });
+
+
+>>>>>>> origin/master
     //Company
 
     // =====================================
@@ -98,22 +133,43 @@ module.exports = function(app, passport) {
     });
 
     // process the login form
+<<<<<<< HEAD
     app.post('/companylogin', passport.authenticate('local-companysignup', {
+=======
+    app.post('/companylogin', passport.authenticate('company-login', {
+>>>>>>> origin/master
         successRedirect : '/companyprofile', // redirect to the secure profile section
         failureRedirect : '/companylogin', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
 
+    // =====================================
+    // FACEBOOK ROUTES =====================
+    // =====================================
+    // route for facebook authentication and login
+    app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+
+    // handle the callback after facebook has authenticated the user
+    app.get('/auth/facebook/callback',
+        passport.authenticate('facebook', {
+            successRedirect : '/profile',
+            failureRedirect : '/signup'
+        }));
 
     // =====================================
-    // COMPANY PROFILE SECTION =============
+    // LINKEDIN ROUTES =====================
     // =====================================
-    // we will want this protected so you have to be logged in to visit
-    // we will use route middleware to verify this (the isLoggedIn function)
-    app.get('/companyprofile', isLoggedIn, function(req, res) {
-        res.render('companyprofile.ejs', {
-            user : req.user // get the company out of session and pass to template
+    // route for LINKEDIN authentication and login
+    app.get('/auth/linkedin',
+        passport.authenticate('linkedin'));
+
+    app.get('/auth/linkedin/callback',
+        passport.authenticate('linkedin', { failureRedirect: '/login' }),
+        function(req, res) {
+            // Successful authentication, redirect home.
+            res.redirect('/');
         });
+<<<<<<< HEAD
     });
     //Go to edit Company Profile
     app.get('/editcompanyprofile', function(req, res) {
@@ -127,6 +183,8 @@ module.exports = function(app, passport) {
 
     }));
 
+=======
+>>>>>>> origin/master
 
 
     // =====================================

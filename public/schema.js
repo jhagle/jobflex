@@ -19,7 +19,7 @@ var userLength = userData.length;
 var companyLength = companyData.length;
 var jobLength = jobData.length;
 
-//Connect to database. Database 'jobflex' is automatically created if it does not previously exist.
+//Connect to database.
 
 mongoose.connect(configDB.url);
 
@@ -37,6 +37,7 @@ db.once('open', function (callback) {
 
 var userSchema = mongoose.Schema({
         local: {
+            usertype: String,
             email: String,
             password: String,
             candidate: {
@@ -93,23 +94,22 @@ var userSchema = mongoose.Schema({
 
 var companySchema = mongoose.Schema({
 
-    local            : {
-        companyname : String,
-        cleartext: String,
-        password: String,
-        corporateId : Number,
-        firstname : String,
-        lastname : String,
-        address : String,
-        city : String,
-        state : String,
-        email: String,
-        created : {type: Date, default: Date.now},
-        webpage: String,
-        logo: Buffer,
-        description: String,
-        culture: Array
-    }
+
+    companyname : String,
+    password: String,
+    corporateId : Number,
+    firstname : String,
+    lastname : String,
+    address : String,
+    city : String,
+    state : String,
+    email: String,
+    created : {type: Date, default: Date.now},
+    webpage: String,
+    logo: Buffer,
+    description: String,
+    culture: Array
+
 
 })
 
@@ -129,9 +129,11 @@ var jobSchema = mongoose.Schema(
 //Create models. Mongoose automatically pluralizes collection names, so don't be alarmed when you see
 //'candidates' or 'companies' if you are using MongoDB shell.
 
-var user = mongoose.model('user', userSchema)
-var company = mongoose.model('company', companySchema)
-var job = mongoose.model('job', jobSchema)
+var user = mongoose.model('user', userSchema);
+var company = mongoose.model('company', companySchema);
+var job = mongoose.model('job', jobSchema);
+
+
 
 
 userSchema.pre('save', function(next) {
@@ -166,25 +168,27 @@ userSchema.pre('save', function(next) {
 
 companySchema.pre('save', function(next) {
     var company = this;
-    company.local.cleartext = company.local.password;
+
+
 
     // only hash the password if it has been modified (or is new)
-    if (!company.isModified('local.password')) return next();
+    if (!company.isModified('password')) return next();
 
     // generate a salt
     bcrypt.genSalt(8, function(err, salt) {
         if (err) return next(err);
 
         // hash the password along with our new salt
-        bcrypt.hash(company.local.password, salt, null, function(err, hash) {
+        bcrypt.hash(company.password, salt, null, function(err, hash) {
             if (err) {return next(err);}
 
             // override the cleartext password with the hashed one
-            company.local.password = hash;
+            company.password = hash;
             next();
         });
     });
 });
+
 
 
 //Populate candidate collection if there is data in companyData.json
@@ -217,4 +221,5 @@ for (var i = 0; i < jobLength; i++) {
         else console.log('Saved : ', data);
     });
 };
+
 
