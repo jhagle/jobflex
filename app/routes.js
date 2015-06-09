@@ -66,15 +66,21 @@ module.exports = function(app, passport) {
         failureFlash : true // allow flash messages
     }));
 
-
     // =====================================
     // PROFILE SECTION =====================
     // =====================================
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
     app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
-            user : req.user // get the user out of session and pass to template
+
+        Company.find({}, function (err, company) {
+            if (err) return (err);
+            console.log(company);
+            res.render('profile.ejs', {
+                company: company,
+                user : req.user
+            }
+        ); // get the user out of session and pass to template
         });
     });
     //Go to edit Profile

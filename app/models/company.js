@@ -10,6 +10,7 @@ var companySchema = mongoose.Schema({
     companyemail : String,
     password     : String,
     companyname  : String,
+    description  : String,
     culture : { type : Array , "default" : [] },
     skills : { type : Array , "default" : [] }
 
