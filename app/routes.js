@@ -96,14 +96,25 @@ module.exports = function(app, passport) {
     }));
 
 
-<<<<<<< HEAD
-=======
+    // =====================================
+    // COMPANY JOB POST SECTION ============
+    // =====================================
+
+    app.get('/jobpost', function(req, res) {
+
+        // render the page and pass in any flash data if it exists
+        res.render('jobpost.ejs', { message: req.flash('signupMessage') });
+    });
+
+
+
+
     // =====================================
     // COMPANY PROFILE SECTION =============
     // =====================================
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
- app.get('/companyprofile', isLoggedIn, function(req, res) {
+    app.get('/companyprofile', isLoggedIn, function(req, res) {
         //Query the Company collection and display results that match the logged in user.
         Company.findOne({'companyname': req.user.local.companyname}, function (err, company) {
             if (err) return (err);
@@ -119,7 +130,6 @@ module.exports = function(app, passport) {
     });
 
 
->>>>>>> origin/master
     //Company
 
     // =====================================
@@ -133,11 +143,9 @@ module.exports = function(app, passport) {
     });
 
     // process the login form
-<<<<<<< HEAD
-    app.post('/companylogin', passport.authenticate('local-companysignup', {
-=======
+
     app.post('/companylogin', passport.authenticate('company-login', {
->>>>>>> origin/master
+
         successRedirect : '/companyprofile', // redirect to the secure profile section
         failureRedirect : '/companylogin', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
@@ -154,7 +162,7 @@ module.exports = function(app, passport) {
         passport.authenticate('facebook', {
             successRedirect : '/profile',
             failureRedirect : '/signup'
-        }));
+    }));
 
     // =====================================
     // LINKEDIN ROUTES =====================
@@ -169,8 +177,6 @@ module.exports = function(app, passport) {
             // Successful authentication, redirect home.
             res.redirect('/');
         });
-<<<<<<< HEAD
-    });
     //Go to edit Company Profile
     app.get('/editcompanyprofile', function(req, res) {
 
@@ -183,8 +189,7 @@ module.exports = function(app, passport) {
 
     }));
 
-=======
->>>>>>> origin/master
+
 
 
     // =====================================
@@ -193,7 +198,7 @@ module.exports = function(app, passport) {
     app.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/');
-    });
+    })
 };
 
 // route middleware to make sure a user is logged in
