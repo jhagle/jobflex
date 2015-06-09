@@ -71,9 +71,11 @@ module.exports = function(passport) {
                     newUser.local.password = newUser.generateHash(password); // use the generateHash function in our user model
                     newUser.local.candidate.firstname = req.param('firstname');
                     newUser.local.candidate.lastname = req.param('lastname');
-                    newUser.local.candidate.culture = req.param('culture');
+                    newUser.local.candidate.birthdate = req.param('birthdate');
                     newUser.local.candidate.school = req.param('school');
                     newUser.local.candidate.major = req.param('major');
+                    newUser.local.candidate.created = req.param('created');
+
 
                     // save the user
                     newUser.save(function (err) {
@@ -226,18 +228,16 @@ module.exports = function(passport) {
                     var newCompany = new Company();
 
                     // set the Company's local credentials
-
                     newUser.local.companyname = companyname;
                     newUser.local.compassword = newUser.generateHash(password); // use the generateHash function in our Company model
                     newUser.local.company.email = req.param('email');
+                    newUser.local.company.address = req.param('address');
+                    newUser.local.company.webpage = req.param('webpage');
                     newUser.companyref = newCompany;
                     newCompany.companyname = companyname;
                     newCompany.password = newUser.local.compassword;
                     newCompany._creator = newUser;
 
-                    //newUser.local.company.firstname = req.param('firstname');
-                    //newUser.local.company.lastname = req.param('lastname');
-                    //newUser.local.company.culture = req.param('culture');
 
                     // save the Company
                     newCompany.save(function (err, data) {
