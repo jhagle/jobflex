@@ -172,19 +172,7 @@ module.exports = function(app, passport) {
     app.get('/companyCultureSort', function(req, res) {
 
         // render the page and pass in any flash data if it exists
-        Company.findOne({'companyname': req.user.local.companyname}, function (err, company) {
-            if (err) return (err);
-            console.log(company);
-
-            res.render('companyCultureSort.ejs', {
-                    company: company,
-                    user: req.user // get the company out of session and pass to template
-
-                }
-            );
-        });
-
-
+        res.render('companyCultureSort.ejs', { message: req.flash('signupMessage') });
     });
 
     app.get('/companySkillsSort', function(req, res) {
