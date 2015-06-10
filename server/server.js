@@ -11,8 +11,5 @@ mongoose.connect('mongodb://localhost/jetbrains');
 var Candidate = mongoose.model('Candidate', {name: String});
 
 
-app.use('views/css', express.static(path.join(__dirname, 'views/css')));
-
-
 
 app.listen(3000);

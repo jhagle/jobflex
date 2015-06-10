@@ -16,4 +16,6 @@ jetbrains.controller("AppCtrl", function ($http) {
         })
     }
     loadProducts();
+
+
 })
