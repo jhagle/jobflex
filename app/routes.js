@@ -151,6 +151,38 @@ module.exports = function(app, passport) {
         failureFlash : true // allow flash messages
     }));
 
+
+    // =====================================
+    // SKILL SORT ROUTES ===================
+    // =====================================
+    // show the both sort lists
+
+    app.get('/candidateCultureSort', function(req, res) {
+
+        // render the page and pass in any flash data if it exists
+        res.render('candidateCultureSort.ejs', { message: req.flash('signupMessage') });
+    });
+
+    app.get('/candidateSkillsSort', function(req, res) {
+
+        // render the page and pass in any flash data if it exists
+        res.render('candidateSkillsSort.ejs', { message: req.flash('signupMessage') });
+    });
+
+    app.get('/companyCultureSort', function(req, res) {
+
+        // render the page and pass in any flash data if it exists
+        res.render('companyCultureSort.ejs', { message: req.flash('signupMessage') });
+    });
+
+    app.get('/companySkillsSort', function(req, res) {
+
+        // render the page and pass in any flash data if it exists
+        res.render('companySkillsSort.ejs', { message: req.flash('signupMessage') });
+    });
+
+
+
     // =====================================
     // FACEBOOK ROUTES =====================
     // =====================================
