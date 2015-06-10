@@ -9,7 +9,7 @@
     <!-- SORT LIST CSS -->
     <link href="http://rubaxa.github.io/Ply/ply.css" rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet" type="text/css"/>
-    <link href="sortable-master/st/app.css" rel="stylesheet" type="text/css"/>
+    <link href="/views/css/sortable-master/st/app.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
@@ -49,18 +49,21 @@
 
 
 </div>
-
+<div class="col-sm-6 col-sm-offset-3">
+    <a href="/companyprofile">Save and Return to Profile</a>
+</div>
 <!----- SORTS JS ------>
-<script src="sortable-master/Sortable.js"></script>
+<script src="/views/css/sortable-master/Sortable.js"></script>
 <script src="http://rubaxa.github.io/Ply/Ply.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-<script src="sortable-master/ng-sortable.js"></script>
+<script src="/views/css/sortable-master/ng-sortable.js"></script>
 
-<script src="sortable-master/st/app.js"></script>
+<script src="/views/css/sortable-master/st/app.js"></script>
 
 <hr>
 
 <script>
+
     var order;
     var el = document.getElementById('cul_sort');
     var sortable = new Sortable(el, {
@@ -82,6 +85,14 @@
         }
 
     });
+    var query = { name: company.name };
+    company.culture = order;
+
+
+
+    function callback (err, numAffected) {
+        console.log(err);
+    }
 
 
 

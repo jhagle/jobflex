@@ -31,7 +31,7 @@ var userSchema = mongoose.Schema({
                 email: String,
                 webpage: String,
                 description: String,
-                attitude: Array,
+                culture: Array,
                 created: {type: Date, default: Date.now},
                 jobs: {
                     title: String,
